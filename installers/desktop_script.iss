@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "CodegraniteApplication"
-#define MyAppVersion "1.5"
+#define MyAppVersion "1.6"
 #define MyAppPublisher "Codegranite"
 #define MyAppURL " https://codegranites1.vercel.app/"
 #define MyAppExeName "codegraniteflutter.exe"
@@ -23,7 +23,7 @@ DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=C:\Users\omozua judah\Desktop\flutter\codegraniteflutter\installers
-OutputBaseFilename=flutter_application
+OutputBaseFilename=flutter_application_v1
 SetupIconFile=C:\Users\omozua judah\Desktop\flutter\codegraniteflutter\windows\runner\resources\app_icon.ico
 Compression=lzma
 SolidCompression=yes

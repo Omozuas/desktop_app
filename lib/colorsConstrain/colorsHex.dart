@@ -11,4 +11,8 @@ class GlobalColors {
   static HexColor foundationblack100 = HexColor('#B3B3B3');
   static HexColor foundationblack500 = HexColor('#282828');
   static HexColor iconDarkColor = HexColor('#292D32');
+  static HexColor successGreen = HexColor('#008D36');
+  static HexColor errorRed = HexColor('#FF0000');
+  static HexColor pendingColor = HexColor('#F3DE8A');
+  static HexColor lightBlue = HexColor('#EAEEF2');
 }
