@@ -9,4 +9,6 @@ class GlobalColors {
   static HexColor dividerLine = HexColor('#C7C7C7');
   static HexColor green = HexColor('#04802E');
   static HexColor foundationblack100 = HexColor('#B3B3B3');
+  static HexColor foundationblack500 = HexColor('#282828');
+  static HexColor iconDarkColor = HexColor('#292D32');
 }

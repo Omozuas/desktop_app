@@ -9,7 +9,6 @@ class NavigationController extends GetxController {
   final screen = [
     DashboardScreen(),
     WorkSheetScreen(),
-    Container(color: Colors.red),
     Container(color: Colors.blue),
     Container(color: Colors.orange),
     Container(color: Colors.green),
@@ -18,6 +17,5 @@ class NavigationController extends GetxController {
     Container(color: Colors.grey),
     Container(color: Colors.deepOrangeAccent),
     Container(color: Colors.redAccent),
-    Container(color: Colors.black87),
   ];
 }

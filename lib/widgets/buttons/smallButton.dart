@@ -8,15 +8,20 @@ class SmallButton extends StatelessWidget {
       this.text,
       required this.buttonHeight,
       required this.buttonWidth,
+      this.height,
+      this.width,
       required this.child});
   final onPressed;
   final text;
   double buttonWidth;
   double buttonHeight;
   Widget child;
+  double? width, height;
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width,
+      height: height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
