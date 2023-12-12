@@ -1,12 +1,16 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/firstNav_Menu.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
+import 'package:codegraniteflutter/services/Apis/AuthApi/registerApi.dart';
 // import 'package:codegraniteflutter/seodNav.dart';
 import 'package:codegraniteflutter/widgets/buttons/LargButton_widget.dart';
 import 'package:codegraniteflutter/widgets/containers/containrs_widegt.dart';
 import 'package:codegraniteflutter/widgets/loginAndSignUP_widget/textFieldWithLabel_widget.dart';
+import 'package:codegraniteflutter/widgets/snack_bars/snack_bar_messages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -17,17 +21,46 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
-
   TextEditingController emailcontroller = TextEditingController();
+  TextEditingController fullNamecontroller = TextEditingController();
+  TextEditingController phoneNumbercontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
   TextEditingController confirmpasswordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final formKey1 = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
+  final formKey3 = GlobalKey<FormState>();
+  final formKey4 = GlobalKey<FormState>();
   bool _isVisible = false;
   bool _isVisible1 = false;
+  void _createUser() async {
+    if (formKey.currentState!.validate() &&
+        formKey1.currentState!.validate() &&
+        formKey2.currentState!.validate() &&
+        formKey3.currentState!.validate() &&
+        formKey4.currentState!.validate()) {
+      final registerAuth =
+          Provider.of<RegisterApiProvider>(context, listen: false);
+      registerAuth
+          .registerUser(
+              fullNamecontroller.text.toString(),
+              emailcontroller.text.toString(),
+              phoneNumbercontroller.text.toString(),
+              passwordcontroller.text.toString())
+          .then((value) {
+        if (value.success == true) {
+          success(context: context, message: value.message);
+          Get.to(() => LoginScreen());
+        } else {
+          error(context: context, message: value.message);
+        }
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final registerAuth = Provider.of<RegisterApiProvider>(context);
     return Scaffold(
       key: _scaffoldkey,
       body: SingleChildScrollView(
@@ -81,6 +114,40 @@ class _SignupScreenState extends State<SignupScreen> {
                             children: <Widget>[
                               textFiled(
                                   keys: formKey,
+                                  label: "Full Name",
+                                  hintText: "Full Name",
+                                  controller2: fullNamecontroller,
+                                  validate: (value) {
+                                    if (value!.isEmpty ||
+                                        !RegExp(r'^[a-z A-Z]+$')
+                                            .hasMatch(value!)) {
+                                      return "Enter Your Full Name";
+                                    } else {
+                                      return null;
+                                    }
+                                  }),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              textFiled(
+                                  keys: formKey1,
+                                  label: "Phone NUMBER",
+                                  hintText: "Phone Number",
+                                  controller2: phoneNumbercontroller,
+                                  validate: (value) {
+                                    if (value!.isEmpty ||
+                                        !RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]+$')
+                                            .hasMatch(value!)) {
+                                      return "Enter Your Phone Number";
+                                    } else {
+                                      return null;
+                                    }
+                                  }),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              textFiled(
+                                  keys: formKey2,
                                   label: "Business Email",
                                   hintText: "Enter Business Email Address",
                                   suffixIcon2: const Icon(CupertinoIcons.mail),
@@ -99,7 +166,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 height: 30,
                               ),
                               textFiled(
-                                  keys: formKey1,
+                                  keys: formKey3,
                                   label: "Password",
                                   hintText: "Enter password",
                                   controller2: passwordcontroller,
@@ -128,7 +195,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 height: 30,
                               ),
                               textFiled(
-                                  keys: formKey2,
+                                  keys: formKey4,
                                   label: "Confirm Password",
                                   hintText: "Re-enter password",
                                   controller2: confirmpasswordController,
@@ -167,19 +234,18 @@ class _SignupScreenState extends State<SignupScreen> {
                               LargButton(
                                 buttonWidth: 700,
                                 buttonHeight: 50,
-                                text: 'Sign Up',
+                                text: registerAuth.loading
+                                    ? 'Loading'
+                                    : 'Sign Up',
                                 onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              NavigationMenue()));
+                                  print("done");
+                                  _createUser();
                                 },
                               ),
                               SizedBox(
                                 height: 30,
                               ),
-                              Container(
+                              IntrinsicHeight(
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
@@ -238,22 +304,20 @@ class _SignupScreenState extends State<SignupScreen> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("Already have an account?",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400,
-                                      )),
+                                  Flexible(
+                                    child: Text("Already have an account?",
+                                        softWrap: true,
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400,
+                                        )),
+                                  ),
                                   SizedBox(
                                     width: 5,
                                   ),
                                   GestureDetector(
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  LoginScreen()));
-                                      print('sign Up');
+                                      Get.to(() => LoginScreen());
                                     },
                                     child: Text("Login",
                                         style: TextStyle(

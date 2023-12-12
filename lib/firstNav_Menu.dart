@@ -58,8 +58,8 @@ class _NavigationMenueState extends State<NavigationMenue> {
                               iconData: Icons.dashboard_outlined,
                               width: 245,
                               height: 47,
-                              onTap: () => controller.selectedIndex.value = 0,
-                              selected: controller.selectedIndex.value == 0,
+                              onTap: () => controller.selectedIndex.value = 8,
+                              selected: controller.selectedIndex.value == 8,
                               title: 'Dashboard',
                             ),
                             NavMenueTab(
@@ -134,8 +134,8 @@ class _NavigationMenueState extends State<NavigationMenue> {
                               width: 245,
                               height: 47,
                               title: 'Settings',
-                              onTap: () => controller.selectedIndex.value = 8,
-                              selected: controller.selectedIndex.value == 8,
+                              onTap: () => controller.selectedIndex.value = 0,
+                              selected: controller.selectedIndex.value == 0,
                             ),
                             SizedBox(
                               height: 20,

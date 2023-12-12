@@ -1,36 +1,41 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/widgets/buttons/LargButton_widget.dart';
 import 'package:codegraniteflutter/widgets/buttons/transparentButton.dart';
-import 'package:codegraniteflutter/widgets/containers/containrs_widegt.dart';
 import 'package:codegraniteflutter/widgets/imageContainee/circlerImageContainer_widget.dart';
 import 'package:codegraniteflutter/widgets/loginAndSignUP_widget/textFieldWithLabel_widget.dart';
+import 'package:codegraniteflutter/widgets/showDialog/deleteWorkSpace.dart';
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class WorkSpaceScreen extends StatefulWidget {
+  const WorkSpaceScreen({super.key});
 
   @override
+  State<WorkSpaceScreen> createState() => _WorkSpaceScreenState();
+}
+
+class _WorkSpaceScreenState extends State<WorkSpaceScreen> {
+  final formKey = GlobalKey<FormState>();
+  final formKey1 = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
+  final formKey3 = GlobalKey<FormState>();
+  final formKey4 = GlobalKey<FormState>();
+  final formKey5 = GlobalKey<FormState>();
+
+  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
+
+  TextEditingController fullNameController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController jobTitleController = TextEditingController();
+  TextEditingController countryController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
-    final formKey1 = GlobalKey<FormState>();
-    final formKey2 = GlobalKey<FormState>();
-    final formKey3 = GlobalKey<FormState>();
-    final formKey4 = GlobalKey<FormState>();
-    final formKey5 = GlobalKey<FormState>();
-
-    final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
-
-    TextEditingController fullNameController = TextEditingController();
-    TextEditingController usernameController = TextEditingController();
-    TextEditingController jobTitleController = TextEditingController();
-    TextEditingController countryController = TextEditingController();
     return Expanded(
       child: Scaffold(
         key: _scaffoldkey,
         backgroundColor: GlobalColors.whiteText,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 30.0, top: 0),
+            padding: const EdgeInsets.only(left: 30.0, top: 0, bottom: 40),
             child: Center(
               child: Container(
                 width: 570,
@@ -53,16 +58,9 @@ class ProfileScreen extends StatelessWidget {
                                   SizedBox(
                                     height: 15,
                                   ),
-                                  Text("Email",
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        color: GlobalColors.DarkBorder,
-                                        fontWeight: FontWeight.w900,
-                                      )),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text("JohnDoes@gmail.com",
+                                  Text(
+                                      "Choose a logo for your workspace. Recommended size is 256 x 256",
+                                      softWrap: true,
                                       style: TextStyle(
                                         fontSize: 14,
                                         color: GlobalColors.DarkBorder,
@@ -121,13 +119,13 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       textFiled(
                           keys: formKey,
-                          label: 'Full Name',
-                          hintText: 'Jane Doe',
+                          label: 'Workspace Name',
+                          hintText: 'Code granites',
                           controller2: fullNameController,
                           validate: (value) {
                             if (value!.isEmpty ||
                                 !RegExp(r'^[a-z A-Z]+$').hasMatch(value!)) {
-                              return "Enter Your Full Name";
+                              return "Workspace Name";
                             } else {
                               return null;
                             }
@@ -137,45 +135,13 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       textFiled(
                           keys: formKey1,
-                          label: 'Username (What do you want to be called?)',
-                          hintText: 'Jane Doe',
+                          label: 'Workspace Url',
+                          hintText: 'Codegranites.app/Code granites',
                           controller2: usernameController,
                           validate: (value) {
                             if (value!.isEmpty ||
                                 !RegExp(r'^[\w\s.,#-]+$').hasMatch(value!)) {
-                              return "Enter Your Username";
-                            } else {
-                              return null;
-                            }
-                          }),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      textFiled(
-                          keys: formKey2,
-                          label: 'Job title',
-                          hintText: 'Designer',
-                          controller2: jobTitleController,
-                          validate: (value) {
-                            if (value!.isEmpty ||
-                                !RegExp(r'^[\w\s.,#-]+$').hasMatch(value!)) {
-                              return "Enter Job title";
-                            } else {
-                              return null;
-                            }
-                          }),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      textFiled(
-                          keys: formKey3,
-                          label: 'Organisation',
-                          hintText: 'Codegranite',
-                          controller2: jobTitleController,
-                          validate: (value) {
-                            if (value!.isEmpty ||
-                                !RegExp(r'^[\w\s.,#-]+$').hasMatch(value!)) {
-                              return "Enter Organisation";
+                              return "Enter Your Workspace Url";
                             } else {
                               return null;
                             }
@@ -183,12 +149,80 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(
                         height: 30,
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TransparentButton(
+                            onPressed: () {},
+                            buttonHeight: 56,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.copy,
+                                  color: GlobalColors.whiteText,
+                                ),
+                                Text("Copy",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: GlobalColors.whiteText,
+                                      fontWeight: FontWeight.w500,
+                                    )),
+                              ],
+                            ),
+                            buttonWidth: 106,
+                            backgroundcolor: GlobalColors.buttonBlue,
+                            borderColor: GlobalColors.buttonBlue,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
                       LargButton(
                         buttonHeight: 56,
-                        buttonWidth: 206,
+                        buttonWidth: 200,
                         onPressed: () {},
-                        text: 'Update profile',
-                      )
+                        text: 'Update',
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Divider(
+                        color: GlobalColors.dividerLine,
+                        thickness: 1,
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Text(
+                          "If you want to permanently delete this workspace and all its data, including but no limited to users, Problem statements, projects click the button below",
+                          softWrap: true,
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: GlobalColors.DarkBorder,
+                            fontWeight: FontWeight.w500,
+                          )),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      TransparentButton(
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) => DeleteWorkSpace());
+                        },
+                        buttonHeight: 56,
+                        child: Text("Delete Workspace ",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: GlobalColors.errorRed,
+                              fontWeight: FontWeight.w500,
+                            )),
+                        buttonWidth: 206,
+                        backgroundcolor: GlobalColors.whiteText,
+                        borderColor: GlobalColors.errorRed,
+                      ),
                     ]),
               ),
             ),

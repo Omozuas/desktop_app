@@ -1,9 +1,12 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/firstNav_Menu.dart';
 import 'package:codegraniteflutter/screens/signUp_screen.dart';
-// import 'package:codegraniteflutter/seodNav.dart';
+import 'package:codegraniteflutter/widgets/snack_bars/snack_bar_messages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import '../services/Apis/AuthApi/registerApi.dart';
 import '../widgets/buttons/LargButton_widget.dart';
 import '../widgets/containers/containrs_widegt.dart';
 import '../widgets/loginAndSignUP_widget/textFieldWithLabel_widget.dart';
@@ -23,8 +26,28 @@ class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
   final formKey1 = GlobalKey<FormState>();
   bool _isVisible = false;
+
+  Future<void> loginUsers() async {
+    if (formKey.currentState!.validate() && formKey1.currentState!.validate()) {
+      final loginAuth =
+          Provider.of<RegisterApiProvider>(context, listen: false);
+      loginAuth
+          .loginUser(emailcontroller.text.toString(),
+              passwordcontroller.text.toString())
+          .then((value) {
+        if (value.status == 'success') {
+          Get.to(() => NavigationMenue());
+          success(context: context, message: value.message);
+        } else {
+          error(context: context, message: value.message);
+        }
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final loginAuth = Provider.of<RegisterApiProvider>(context);
     return Scaffold(
       key: _scaffoldkey,
       body: SingleChildScrollView(
@@ -153,13 +176,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               LargButton(
                                 buttonWidth: 700,
                                 buttonHeight: 50,
-                                text: 'Login',
+                                text:
+                                    loginAuth.loading ? 'loading....' : 'Login',
                                 onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              NavigationMenue()));
+                                  loginUsers();
                                 },
                               ),
                               SizedBox(
@@ -232,22 +252,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                   SizedBox(
                                     width: 5,
                                   ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  SignupScreen()));
-
-                                      print('sign Up');
-                                    },
-                                    child: Text("Sign up",
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          color: GlobalColors.buttonBlue,
-                                          fontWeight: FontWeight.w500,
-                                        )),
+                                  Flexible(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Get.to(() => SignupScreen());
+                                      },
+                                      child: Text("Sign up",
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: GlobalColors.buttonBlue,
+                                            fontWeight: FontWeight.w500,
+                                          )),
+                                    ),
                                   ),
                                 ],
                               )

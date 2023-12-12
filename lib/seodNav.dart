@@ -1,6 +1,10 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
+import 'package:codegraniteflutter/screens/AccountPrefrence_screen.dart';
 import 'package:codegraniteflutter/screens/Dashboard_screen.dart';
 import 'package:codegraniteflutter/screens/Profile_Screen.dart';
+import 'package:codegraniteflutter/screens/notificationSetting_screen.dart';
+import 'package:codegraniteflutter/screens/security_screen.dart';
+import 'package:codegraniteflutter/screens/workSpace_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -124,9 +128,9 @@ class SettingsNavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screen = [
     ProfileScreen(),
-    Container(color: Colors.black),
-    Container(color: Colors.red),
-    Container(color: Colors.blue),
-    Container(color: Colors.blue),
+    AccountPrefrenceScreen(),
+    SecurityScreen(),
+    WorkSpaceScreen(),
+    NotificationSeetingScreen(),
   ];
 }

@@ -21,6 +21,7 @@ Widget textFiled(
           label,
           style: TextStyle(
             fontSize: 16,
+            color: GlobalColors.DarkBorder,
             fontWeight: FontWeight.w600,
           ),
         ),

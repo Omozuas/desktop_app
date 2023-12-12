@@ -31,6 +31,7 @@ class ImageContainerWithText extends StatelessWidget {
         ),
         Text(
           text,
+          softWrap: true,
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w400,

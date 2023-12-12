@@ -3,6 +3,7 @@ import 'package:codegraniteflutter/widgets/buttons/transparentButton.dart';
 import 'package:codegraniteflutter/widgets/containers/containrs_widegt.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../colorsConstrain/colorsHex.dart';
 import '../widgets/buttons/subTitleAndButton_widget.dart';
 import '../widgets/buttons/subtitleWithIconButtonLast_widget.dart';
@@ -11,6 +12,7 @@ import '../widgets/imageContainee/circlerImageContainer_widget.dart';
 import '../widgets/imageContainee/imageConainer_With_AddProjectButton_widget.dart';
 import '../widgets/imageContainee/imagerContainerWithText_widget.dart';
 import '../widgets/searchBoxWidget/saerchBox_widget.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -27,6 +29,31 @@ class _DashboardScreenState extends State<DashboardScreen> {
   TextEditingController passwordcontroller = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final formKey1 = GlobalKey<FormState>();
+  var token;
+  var id;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    decodeToken();
+  }
+
+  Future<void> decodeToken() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      token = prefs.getString('token')!;
+    });
+    print("see1: $token");
+
+    Map<String, dynamic> jwtDecodedToken = JwtDecoder.decode(token);
+    setState(() {
+      id = jwtDecodedToken['accountId'];
+    });
+    print("see1: $jwtDecodedToken");
+    print(id);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -96,6 +123,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       buttonHeight: 56,
                       buttonWidth: 100,
                       onPressed: () {},
+                      backgroundcolor: Colors.white,
+                      borderColor: GlobalColors.buttonBlue,
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

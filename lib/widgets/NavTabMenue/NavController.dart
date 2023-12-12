@@ -8,7 +8,7 @@ import '../../screens/Dashboard_screen.dart';
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screen = [
-    DashboardScreen(),
+    SettingsScreen(),
     WorkSheetScreen(),
     Container(color: Colors.blue),
     Container(color: Colors.orange),
@@ -16,6 +16,6 @@ class NavigationController extends GetxController {
     Container(color: Colors.pink),
     Container(color: Colors.amber),
     Container(color: Colors.grey),
-    SettingsScreen(),
+    DashboardScreen(),
   ];
 }

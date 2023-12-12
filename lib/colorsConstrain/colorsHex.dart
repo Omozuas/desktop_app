@@ -15,4 +15,6 @@ class GlobalColors {
   static HexColor errorRed = HexColor('#FF0000');
   static HexColor pendingColor = HexColor('#F3DE8A');
   static HexColor lightBlue = HexColor('#EAEEF2');
+  static HexColor lightGreen = HexColor('#80BD92');
+  static HexColor lightgray = HexColor('#E8E8E8');
 }

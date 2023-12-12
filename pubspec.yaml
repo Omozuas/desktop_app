@@ -38,6 +38,12 @@ dependencies:
   hexcolor: ^3.0.1
   get: ^4.6.6
   ionicons: ^0.2.2
+  provider: ^6.1.1
+  shared_preferences: ^2.2.2
+  http: ^1.1.2
+  jwt_decoder: ^2.0.1
+  country_code_picker: ^3.0.0
+  
 
 dev_dependencies:
   flutter_test:

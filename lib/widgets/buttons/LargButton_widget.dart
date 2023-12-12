@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class LargButton extends StatelessWidget {
   LargButton(
       {super.key,
-      this.onPressed,
+      required this.onPressed,
       this.text,
       required this.buttonHeight,
       required this.buttonWidth});
-  final onPressed;
+  VoidCallback onPressed;
   final text;
   double buttonWidth;
   double buttonHeight;
