@@ -43,6 +43,13 @@ dependencies:
   http: ^1.1.2
   jwt_decoder: ^2.0.1
   country_code_picker: ^3.0.0
+  flutter_file_downloader: ^1.2.0
+  path: ^1.8.3
+  url_launcher: ^6.2.2
+  video_player: ^2.8.1
+  number_pagination: ^0.0.3+2
+  number_paginator: ^0.4.0
+
   
 
 dev_dependencies:
@@ -70,7 +77,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    # - assets/animation/
+    - assets/videos/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

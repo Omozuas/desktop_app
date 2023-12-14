@@ -1,3 +1,5 @@
+import 'package:codegraniteflutter/screens/Notification_Screen.dart';
+import 'package:codegraniteflutter/screens/client_Screen.dart';
 import 'package:codegraniteflutter/screens/problemStatement_screen.dart';
 import 'package:codegraniteflutter/screens/settings_Screen.dart';
 import 'package:flutter/material.dart';
@@ -8,13 +10,13 @@ import '../../screens/Dashboard_screen.dart';
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screen = [
-    ProblemStatementScreen(),
     DashboardScreen(),
+    ProblemStatementScreen(),
     Container(color: Colors.blue),
+    ClientsScreen(),
     Container(color: Colors.orange),
     Container(color: Colors.green),
-    Container(color: Colors.pink),
-    Container(color: Colors.amber),
+    NotificationScreen(),
     Container(color: Colors.grey),
     SettingsScreen(),
   ];

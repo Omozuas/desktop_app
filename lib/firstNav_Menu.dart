@@ -58,8 +58,8 @@ class _NavigationMenueState extends State<NavigationMenue> {
                               iconData: Icons.dashboard_outlined,
                               width: 245,
                               height: 47,
-                              onTap: () => controller.selectedIndex.value = 1,
-                              selected: controller.selectedIndex.value == 1,
+                              onTap: () => controller.selectedIndex.value = 0,
+                              selected: controller.selectedIndex.value == 0,
                               title: 'Dashboard',
                             ),
                             NavMenueTab(
@@ -67,8 +67,8 @@ class _NavigationMenueState extends State<NavigationMenue> {
                               width: 245,
                               height: 50,
                               title: 'Problem Statements',
-                              onTap: () => controller.selectedIndex.value = 0,
-                              selected: controller.selectedIndex.value == 0,
+                              onTap: () => controller.selectedIndex.value = 1,
+                              selected: controller.selectedIndex.value == 1,
                             ),
                             NavMenueTab(
                               iconData: Icons.work_outline_rounded,

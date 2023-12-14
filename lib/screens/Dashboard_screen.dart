@@ -35,7 +35,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    decodeToken();
+    // decodeToken();
   }
 
   Future<void> decodeToken() async {
@@ -2430,7 +2430,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           padding: const EdgeInsets.only(
                               left: 10.0, top: 15, right: 10, bottom: 15),
                           iconData: Icons.receipt_long,
-                          title: 'History',
+                          title: 'Transactions',
                           buttonTitle: 'View all',
                           buttonIcon: Icons.arrow_forward_ios,
                           ontap: () {},
@@ -2440,7 +2440,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           child: Column(
                             children: [
                               SizedBox(
-                                height: 249,
+                                height: 600,
                                 child: ListView.builder(
                                     scrollDirection: Axis.vertical,
                                     padding: EdgeInsets.zero,
@@ -2476,8 +2476,22 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                   DataColumn(
                                                     label: Container(
                                                       width: 50,
+                                                      child: Text("Amount",
+                                                          softWrap: true,
+                                                          style: TextStyle(
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          )),
+                                                    ),
+                                                  ),
+                                                  DataColumn(
+                                                    label: Container(
+                                                      width: 60,
                                                       child: Text(
-                                                          "Project owner",
+                                                          "Payment Type",
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           softWrap: true,
                                                           style: TextStyle(
                                                             fontSize: 14,
@@ -2489,32 +2503,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                   DataColumn(
                                                     label: Container(
                                                       width: 50,
-                                                      child: Text(
-                                                          "Date created",
-                                                          softWrap: true,
-                                                          style: TextStyle(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                          )),
-                                                    ),
-                                                  ),
-                                                  DataColumn(
-                                                    label: Container(
-                                                      width: 50,
-                                                      child: Text("Due Date",
-                                                          softWrap: true,
-                                                          style: TextStyle(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                          )),
-                                                    ),
-                                                  ),
-                                                  DataColumn(
-                                                    label: Container(
-                                                      width: 50,
-                                                      child: Text("Status",
+                                                      child: Text("Date",
                                                           softWrap: true,
                                                           style: TextStyle(
                                                             fontSize: 14,
@@ -2529,1180 +2518,385 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                     DataCell(Container(
                                                       width: 70,
                                                       child: Text(
-                                                          "John doe project",
+                                                          "Dashboard Design",
                                                           softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                           )),
                                                     )),
-                                                    DataCell(Text("Jane doe",
+                                                    DataCell(Text("NGN 100,000",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("Initial",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("11/12/23",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Row(
-                                                      children: [
-                                                        Container(
-                                                          margin:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1),
-                                                            color: GlobalColors
-                                                                .successGreen,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                        Text("Completed",
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            )),
-                                                      ],
-                                                    )),
                                                   ]),
                                                   DataRow(cells: [
                                                     DataCell(Container(
                                                       width: 70,
                                                       child: Text(
-                                                          "John doe project",
+                                                          "Dashboard Design",
                                                           softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                           )),
                                                     )),
-                                                    DataCell(Text("Jane doe",
+                                                    DataCell(Text("NGN 100,000",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("Final",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("11/12/23",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Row(
-                                                      children: [
-                                                        Container(
-                                                          margin:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1),
-                                                            color: GlobalColors
-                                                                .successGreen,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                        Text("Completed",
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            )),
-                                                      ],
-                                                    )),
                                                   ]),
                                                   DataRow(cells: [
                                                     DataCell(Container(
                                                       width: 70,
                                                       child: Text(
-                                                          "John doe project",
+                                                          "Dashboard Design",
                                                           softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                           )),
                                                     )),
-                                                    DataCell(Text("Jane doe",
+                                                    DataCell(Text("NGN 100,000",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("Initial",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("11/12/23",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Row(
-                                                      children: [
-                                                        Container(
-                                                          margin:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1),
-                                                            color: GlobalColors
-                                                                .successGreen,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                        Text("Completed",
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            )),
-                                                      ],
-                                                    )),
                                                   ]),
                                                   DataRow(cells: [
                                                     DataCell(Container(
                                                       width: 70,
                                                       child: Text(
-                                                          "John doe project",
+                                                          "Dashboard Design",
                                                           softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                           )),
                                                     )),
-                                                    DataCell(Text("Jane doe",
+                                                    DataCell(Text("NGN 100,000",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("Final",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("11/12/23",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Row(
-                                                      children: [
-                                                        Container(
-                                                          margin:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1),
-                                                            color: GlobalColors
-                                                                .successGreen,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                        Text("Completed",
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            )),
-                                                      ],
-                                                    )),
                                                   ]),
                                                   DataRow(cells: [
                                                     DataCell(Container(
                                                       width: 70,
                                                       child: Text(
-                                                          "John doe project",
+                                                          "Dashboard Design",
                                                           softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                           )),
                                                     )),
-                                                    DataCell(Text("Jane doe",
+                                                    DataCell(Text("NGN 100,000",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("Initial",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("11/12/23",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Row(
-                                                      children: [
-                                                        Container(
-                                                          margin:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1),
-                                                            color: GlobalColors
-                                                                .successGreen,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                        Text("Completed",
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            )),
-                                                      ],
-                                                    )),
                                                   ]),
                                                   DataRow(cells: [
                                                     DataCell(Container(
                                                       width: 70,
                                                       child: Text(
-                                                          "John doe project",
+                                                          "Dashboard Design",
                                                           softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                           )),
                                                     )),
-                                                    DataCell(Text("Jane doe",
+                                                    DataCell(Text("NGN 100,000",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("Final",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("11/12/23",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Row(
-                                                      children: [
-                                                        Container(
-                                                          margin:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1),
-                                                            color: GlobalColors
-                                                                .successGreen,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                        Text("Completed",
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            )),
-                                                      ],
-                                                    )),
                                                   ]),
                                                   DataRow(cells: [
                                                     DataCell(Container(
                                                       width: 70,
                                                       child: Text(
-                                                          "John doe project",
+                                                          "Dashboard Design",
                                                           softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                           )),
                                                     )),
-                                                    DataCell(Text("Jane doe",
+                                                    DataCell(Text("NGN 100,000",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("Initial",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("11/12/23",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Row(
-                                                      children: [
-                                                        Container(
-                                                          margin:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1),
-                                                            color: GlobalColors
-                                                                .successGreen,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                        Text("Completed",
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            )),
-                                                      ],
-                                                    )),
                                                   ]),
                                                   DataRow(cells: [
                                                     DataCell(Container(
                                                       width: 70,
                                                       child: Text(
-                                                          "John doe project",
+                                                          "Dashboard Design",
                                                           softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                           )),
                                                     )),
-                                                    DataCell(Text("Jane doe",
+                                                    DataCell(Text("NGN 100,000",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("Final",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("11/12/23",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Row(
-                                                      children: [
-                                                        Container(
-                                                          margin:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1),
-                                                            color: GlobalColors
-                                                                .successGreen,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                        Text("Completed",
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            )),
-                                                      ],
-                                                    )),
                                                   ]),
                                                   DataRow(cells: [
                                                     DataCell(Container(
                                                       width: 70,
                                                       child: Text(
-                                                          "John doe project",
+                                                          "Dashboard Design",
                                                           softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                           )),
                                                     )),
-                                                    DataCell(Text("Jane doe",
+                                                    DataCell(Text("NGN 100,000",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("Final",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("11/12/23",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Row(
-                                                      children: [
-                                                        Container(
-                                                          margin:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1),
-                                                            color: GlobalColors
-                                                                .successGreen,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                        Text("Completed",
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            )),
-                                                      ],
-                                                    )),
                                                   ]),
                                                   DataRow(cells: [
                                                     DataCell(Container(
                                                       width: 70,
                                                       child: Text(
-                                                          "John doe project",
+                                                          "Dashboard Design",
                                                           softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w400,
                                                           )),
                                                     )),
-                                                    DataCell(Text("Jane doe",
+                                                    DataCell(Text("NGN 100,000",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("Initial",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Text("11/11/23",
+                                                    DataCell(Text("11/12/23",
                                                         style: TextStyle(
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                         ))),
-                                                    DataCell(Row(
-                                                      children: [
-                                                        Container(
-                                                          margin:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(5),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1),
-                                                            color: GlobalColors
-                                                                .successGreen,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                        ),
-                                                        Text("Completed",
-                                                            style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                            )),
-                                                      ],
-                                                    )),
                                                   ]),
-                                                ])
+                                                  DataRow(cells: [
+                                                    DataCell(Container(
+                                                      width: 70,
+                                                      child: Text(
+                                                          "Dashboard Design",
+                                                          softWrap: true,
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight.w400,
+                                                          )),
+                                                    )),
+                                                    DataCell(Text("NGN 100,000",
+                                                        style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                        ))),
+                                                    DataCell(Text("Final",
+                                                        style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                        ))),
+                                                    DataCell(Text("11/12/23",
+                                                        style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                        ))),
+                                                  ]),
+                                                ]),
                                           ],
                                         ),
                                       );
                                       // ImageContainerWithText(
-                                      //     height: 168,
-                                      //     width: 136,
-                                      //     imageAsset:
-                                      //         'assets/images/frameProject2.png',
-                                      //     text:
-                                      //         "Oops! There are no completed projects yet",
-                                      //     padding: EdgeInsets.only(
-                                      //         left: 30.0,
-                                      //         top: 10,
-                                      //         right: 30,
-                                      //         bottom: 15));
+                                      //   width: 168,
+                                      //   height: 136,
+                                      //   imageAsset:
+                                      //       'assets/images/frameProject3.png',
+                                      //   text:
+                                      //       "No transactions have been made yet!",
+                                      //   padding:
+                                      //       const EdgeInsets.only(
+                                      //           left: 30.0,
+                                      //           top: 10,
+                                      //           right: 30,
+                                      //           bottom: 15),
+                                      // );
                                     }),
                               ),
-                              Divider(),
-                              Expanded(
-                                  child: Column(
-                                children: [
-                                  SubtitleWithIconButtonLast(
-                                    padding: const EdgeInsets.only(
-                                        left: 10.0,
-                                        top: 15,
-                                        right: 10,
-                                        bottom: 1),
-                                    iconData: Icons.receipt_long,
-                                    title: 'Transactions',
-                                    buttonTitle: 'View all',
-                                    buttonIcon: Icons.arrow_forward_ios,
-                                    ontap: () {},
-                                  ),
-                                  Divider(),
-                                  Expanded(
-                                    child: Column(
-                                      children: [
-                                        SizedBox(
-                                          height: 280,
-                                          child: ListView.builder(
-                                              scrollDirection: Axis.vertical,
-                                              padding: EdgeInsets.zero,
-                                              shrinkWrap: true,
-                                              // itemExtent: 300,
-                                              itemCount: 1,
-                                              itemBuilder:
-                                                  (BuildContext context,
-                                                      int index) {
-                                                return SingleChildScrollView(
-                                                  scrollDirection:
-                                                      Axis.horizontal,
-                                                  child: Column(
-                                                    children: [
-                                                      DataTable(
-                                                          // columnSpacing: 100,
-                                                          dataRowMaxHeight: 50,
-                                                          columns: [
-                                                            DataColumn(
-                                                              label: Container(
-                                                                width: 50,
-                                                                child: Text(
-                                                                  "Project title",
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                  ),
-                                                                  softWrap:
-                                                                      true,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            DataColumn(
-                                                              label: Container(
-                                                                width: 50,
-                                                                child: Text(
-                                                                    "Amount",
-                                                                    softWrap:
-                                                                        true,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                    )),
-                                                              ),
-                                                            ),
-                                                            DataColumn(
-                                                              label: Container(
-                                                                width: 60,
-                                                                child: Text(
-                                                                    "Payment Type",
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    softWrap:
-                                                                        true,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                    )),
-                                                              ),
-                                                            ),
-                                                            DataColumn(
-                                                              label: Container(
-                                                                width: 50,
-                                                                child: Text(
-                                                                    "Date",
-                                                                    softWrap:
-                                                                        true,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                    )),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                          rows: [
-                                                            DataRow(cells: [
-                                                              DataCell(
-                                                                  Container(
-                                                                width: 70,
-                                                                child: Text(
-                                                                    "Dashboard Design",
-                                                                    softWrap:
-                                                                        true,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400,
-                                                                    )),
-                                                              )),
-                                                              DataCell(Text(
-                                                                  "NGN 100,000",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "Initial",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "11/12/23",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                            ]),
-                                                            DataRow(cells: [
-                                                              DataCell(
-                                                                  Container(
-                                                                width: 70,
-                                                                child: Text(
-                                                                    "Dashboard Design",
-                                                                    softWrap:
-                                                                        true,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400,
-                                                                    )),
-                                                              )),
-                                                              DataCell(Text(
-                                                                  "NGN 100,000",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "Final",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "11/12/23",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                            ]),
-                                                            DataRow(cells: [
-                                                              DataCell(
-                                                                  Container(
-                                                                width: 70,
-                                                                child: Text(
-                                                                    "Dashboard Design",
-                                                                    softWrap:
-                                                                        true,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400,
-                                                                    )),
-                                                              )),
-                                                              DataCell(Text(
-                                                                  "NGN 100,000",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "Initial",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "11/12/23",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                            ]),
-                                                            DataRow(cells: [
-                                                              DataCell(
-                                                                  Container(
-                                                                width: 70,
-                                                                child: Text(
-                                                                    "Dashboard Design",
-                                                                    softWrap:
-                                                                        true,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400,
-                                                                    )),
-                                                              )),
-                                                              DataCell(Text(
-                                                                  "NGN 100,000",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "Final",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "11/12/23",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                            ]),
-                                                            DataRow(cells: [
-                                                              DataCell(
-                                                                  Container(
-                                                                width: 70,
-                                                                child: Text(
-                                                                    "Dashboard Design",
-                                                                    softWrap:
-                                                                        true,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400,
-                                                                    )),
-                                                              )),
-                                                              DataCell(Text(
-                                                                  "NGN 100,000",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "Initial",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "11/12/23",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                            ]),
-                                                            DataRow(cells: [
-                                                              DataCell(
-                                                                  Container(
-                                                                width: 70,
-                                                                child: Text(
-                                                                    "Dashboard Design",
-                                                                    softWrap:
-                                                                        true,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400,
-                                                                    )),
-                                                              )),
-                                                              DataCell(Text(
-                                                                  "NGN 100,000",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "Final",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "11/12/23",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                            ]),
-                                                            DataRow(cells: [
-                                                              DataCell(
-                                                                  Container(
-                                                                width: 70,
-                                                                child: Text(
-                                                                    "Dashboard Design",
-                                                                    softWrap:
-                                                                        true,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400,
-                                                                    )),
-                                                              )),
-                                                              DataCell(Text(
-                                                                  "NGN 100,000",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "Initial",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "11/12/23",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                            ]),
-                                                            DataRow(cells: [
-                                                              DataCell(
-                                                                  Container(
-                                                                width: 70,
-                                                                child: Text(
-                                                                    "Dashboard Design",
-                                                                    softWrap:
-                                                                        true,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style:
-                                                                        TextStyle(
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400,
-                                                                    )),
-                                                              )),
-                                                              DataCell(Text(
-                                                                  "NGN 100,000",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "Final",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                              DataCell(Text(
-                                                                  "11/12/23",
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w400,
-                                                                  ))),
-                                                            ]),
-                                                          ]),
-                                                    ],
-                                                  ),
-                                                );
-                                                // ImageContainerWithText(
-                                                //   width: 168,
-                                                //   height: 136,
-                                                //   imageAsset:
-                                                //       'assets/images/frameProject3.png',
-                                                //   text:
-                                                //       "No transactions have been made yet!",
-                                                //   padding:
-                                                //       const EdgeInsets.only(
-                                                //           left: 30.0,
-                                                //           top: 10,
-                                                //           right: 30,
-                                                //           bottom: 15),
-                                                // );
-                                              }),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              )),
                             ],
                           ),
                         ),
