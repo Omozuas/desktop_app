@@ -1,5 +1,5 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
-import 'package:codegraniteflutter/screens/Dashboard_screen.dart';
+import 'package:codegraniteflutter/screens/dashboard_Screen/Dashboard_screen.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/NavController.dart';
 import 'package:codegraniteflutter/widgets/imageContainee/circlerImageContainer_widget.dart';

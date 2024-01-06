@@ -49,6 +49,9 @@ dependencies:
   video_player: ^2.8.1
   number_pagination: ^0.0.3+2
   number_paginator: ^0.4.0
+  font_awesome_flutter: ^10.6.0
+  path_provider: ^2.1.1
+  chewie: ^1.7.4
 
   
 
@@ -61,7 +64,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -101,6 +104,10 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+    # - family: NotoSans
+    #   fonts:
+    #     - asset: fonts/NotoSans-Regular.ttf
+    #     - asset: fonts/NotoSans-Bold.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

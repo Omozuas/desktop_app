@@ -1,6 +1,4 @@
-import 'package:codegraniteflutter/firstNav_Menu.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
-import 'package:codegraniteflutter/screens/signUp_screen.dart';
 import 'package:codegraniteflutter/services/Apis/AuthApi/registerApi.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
       providers: [ChangeNotifierProvider(create: (_) => RegisterApiProvider())],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home: NavigationMenue(),
+        home: LoginScreen(),
         localizationsDelegates: [CountryLocalizations.delegate],
       ),
     );

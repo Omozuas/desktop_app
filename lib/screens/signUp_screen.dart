@@ -1,5 +1,6 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/firstNav_Menu.dart';
+import 'package:codegraniteflutter/screens/dashboard_Screen/Dashboard_screen.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
 import 'package:codegraniteflutter/services/Apis/AuthApi/registerApi.dart';
 // import 'package:codegraniteflutter/seodNav.dart';
@@ -234,12 +235,15 @@ class _SignupScreenState extends State<SignupScreen> {
                               LargButton(
                                 buttonWidth: 700,
                                 buttonHeight: 50,
-                                text: registerAuth.loading
-                                    ? 'Loading'
-                                    : 'Sign Up',
+                                text:
+                                    // registerAuth.loading
+                                    //     ? 'Loading'
+                                    //     :
+                                    'Sign Up',
                                 onPressed: () {
-                                  print("done");
-                                  _createUser();
+                                  // print("done");
+                                  // _createUser();
+                                  Get.to(NavigationMenue());
                                 },
                               ),
                               SizedBox(
