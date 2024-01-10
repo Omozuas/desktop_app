@@ -242,8 +242,8 @@ class _SignupScreenState extends State<SignupScreen> {
                                     'Sign Up',
                                 onPressed: () {
                                   // print("done");
-                                  // _createUser();
-                                  Get.to(NavigationMenue());
+                                  _createUser();
+                                  // Get.to(NavigationMenue());
                                 },
                               ),
                               SizedBox(

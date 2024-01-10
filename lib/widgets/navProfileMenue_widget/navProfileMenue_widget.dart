@@ -50,11 +50,12 @@ class NavMenueProfile extends StatelessWidget {
             Text(name,
                 style: TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w500,
                 )),
             Text(email,
+                softWrap: true,
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 12,
                   fontWeight: FontWeight.w400,
                 ))
           ],

@@ -1,6 +1,7 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/screens/dashboard_Screen/Dashboard_screen.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
+import 'package:codegraniteflutter/services/Apis/GetInfoFromApi/getUserById.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/NavController.dart';
 import 'package:codegraniteflutter/widgets/imageContainee/circlerImageContainer_widget.dart';
 import 'package:codegraniteflutter/widgets/navProfileMenue_widget/navProfileMenue_widget.dart';
@@ -9,6 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'widgets/NavTabMenue/MainNavTab_wideget.dart';
 
@@ -20,6 +24,44 @@ class NavigationMenue extends StatefulWidget {
 }
 
 class _NavigationMenueState extends State<NavigationMenue> {
+  var token;
+  var id;
+  String fullname = '';
+  String email = '';
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    decodeToken();
+  }
+
+  Future<void> decodeToken() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      token = prefs.getString('token')!;
+    });
+    print("see1: $token");
+
+    Map<String, dynamic> jwtDecodedToken = JwtDecoder.decode(token);
+    setState(() {
+      id = jwtDecodedToken['accountId'];
+    });
+    print("see1: $jwtDecodedToken");
+    print(id);
+    getClientInfByid();
+  }
+
+  Future<void> getClientInfByid() async {
+    final getInfo = Provider.of<GetUserApiProvider>(context, listen: false);
+    getInfo.getClientById(token, id).then((value) {
+      setState(() {
+        fullname = value.fullName;
+        email = value.email;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
@@ -145,8 +187,8 @@ class _NavigationMenueState extends State<NavigationMenue> {
                               child: NavMenueProfile(
                                 onTap: () {},
                                 image: 'assets/images/Image.png',
-                                name: "Jane Doe",
-                                email: "JohnDoe@gmail",
+                                name: "$fullname",
+                                email: "$email",
                               ),
                             ),
                           ],

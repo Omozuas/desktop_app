@@ -1,9 +1,11 @@
 import 'package:codegraniteflutter/Local_storage/get_directory.dart';
+import 'package:codegraniteflutter/services/Apis/GetInfoFromApi/getUserById.dart';
 import 'package:codegraniteflutter/widgets/buttons/smallButton.dart';
 import 'package:codegraniteflutter/widgets/buttons/transparentButton.dart';
 import 'package:codegraniteflutter/widgets/containers/containrs_widegt.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../colorsConstrain/colorsHex.dart';
 import '../../widgets/buttons/subTitleAndButton_widget.dart';
@@ -30,11 +32,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
   final formKey1 = GlobalKey<FormState>();
   var token;
   var id;
+  String fullname = '';
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    // decodeToken();
+    decodeToken();
   }
 
   Future<void> decodeToken() async {
@@ -51,6 +54,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
     });
     print("see1: $jwtDecodedToken");
     print(id);
+    getClientInfByid();
+  }
+
+  Future<void> getClientInfByid() async {
+    final getInfo = Provider.of<GetUserApiProvider>(context, listen: false);
+    getInfo.getClientById(token, id).then((value) {
+      setState(() {
+        fullname = value.fullName;
+      });
+    });
   }
 
   @override
@@ -64,7 +77,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HeaderContainerTitle(
-                title: 'Welcome Back!, Jane',
+                title: 'Welcome Back!, $fullname',
               ),
               Divider(
                 height: 1,
