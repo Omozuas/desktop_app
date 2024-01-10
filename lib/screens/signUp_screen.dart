@@ -235,11 +235,9 @@ class _SignupScreenState extends State<SignupScreen> {
                               LargButton(
                                 buttonWidth: 700,
                                 buttonHeight: 50,
-                                text:
-                                    // registerAuth.loading
-                                    //     ? 'Loading'
-                                    //     :
-                                    'Sign Up',
+                                text: registerAuth.loading
+                                    ? 'Loading'
+                                    : 'Sign Up',
                                 onPressed: () {
                                   // print("done");
                                   _createUser();
