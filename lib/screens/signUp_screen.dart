@@ -1,6 +1,4 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
-import 'package:codegraniteflutter/firstNav_Menu.dart';
-import 'package:codegraniteflutter/screens/dashboard_Screen/Dashboard_screen.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
 import 'package:codegraniteflutter/services/Apis/AuthApi/registerApi.dart';
 // import 'package:codegraniteflutter/seodNav.dart';

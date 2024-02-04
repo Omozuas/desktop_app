@@ -52,6 +52,9 @@ dependencies:
   font_awesome_flutter: ^10.6.0
   path_provider: ^2.1.1
   chewie: ^1.7.4
+  csc_picker: ^0.2.7
+  file_picker: ^6.1.1
+  image_picker: ^1.0.7
 
   
 

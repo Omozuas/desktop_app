@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "CodeGranite"
-#define MyAppVersion "1.5"
+#define MyAppVersion "1.6"
 #define MyAppPublisher "Codegranite"
 #define MyAppURL "https://codegranites-pms-admin.vercel.app/"
 #define MyAppExeName "codegraniteflutter.exe"

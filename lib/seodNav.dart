@@ -8,9 +8,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SettingsNavMenue extends StatelessWidget {
+class SettingsNavMenue extends StatefulWidget {
   const SettingsNavMenue({super.key});
 
+  @override
+  State<SettingsNavMenue> createState() => _SettingsNavMenueState();
+}
+
+class _SettingsNavMenueState extends State<SettingsNavMenue> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SettingsNavigationController());

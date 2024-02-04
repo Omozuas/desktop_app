@@ -19,11 +19,10 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key, this.token});
-  String? token;
+  String? token = '';
 
   @override
   Widget build(BuildContext context) {
-    print("token: $token");
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => RegisterApiProvider()),
@@ -31,7 +30,11 @@ class MyApp extends StatelessWidget {
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home: JwtDecoder.isExpired(token!) ? LoginScreen() : NavigationMenue(),
+        home: token == null
+            ? LoginScreen()
+            : JwtDecoder.isExpired(token!)
+                ? LoginScreen()
+                : NavigationMenue(),
         localizationsDelegates: [CountryLocalizations.delegate],
       ),
     );

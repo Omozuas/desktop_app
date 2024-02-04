@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../responsive/responsive.dart';
+
 class PagesClient extends StatelessWidget {
   PagesClient(
       {super.key,
@@ -61,8 +63,12 @@ class PagesClient extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Container(
-                                  width: 150,
-                                  height: 150,
+                                  width: !Responsive.isDesktop(context)
+                                      ? 120
+                                      : 150,
+                                  height: !Responsive.isDesktop(context)
+                                      ? 120
+                                      : 150,
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                         image: AssetImage(
@@ -100,11 +106,14 @@ class PagesClient extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(email,
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                        )),
+                                    Flexible(
+                                      child: Text(email,
+                                          softWrap: true,
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                          )),
+                                    ),
                                     IconButton(
                                         onPressed: () {},
                                         icon: Icon(Icons.edit))

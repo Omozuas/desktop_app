@@ -1,15 +1,11 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
-import 'package:codegraniteflutter/screens/dashboard_Screen/Dashboard_screen.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
 import 'package:codegraniteflutter/services/Apis/GetInfoFromApi/getUserById.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/NavController.dart';
-import 'package:codegraniteflutter/widgets/imageContainee/circlerImageContainer_widget.dart';
 import 'package:codegraniteflutter/widgets/navProfileMenue_widget/navProfileMenue_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -169,7 +165,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
                               color: GlobalColors.dividerLine,
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 40,
                             ),
                             NavMenueTab(
                               iconData: CupertinoIcons.gear,
@@ -178,6 +174,41 @@ class _NavigationMenueState extends State<NavigationMenue> {
                               title: 'Settings',
                               onTap: () => controller.selectedIndex.value = 8,
                               selected: controller.selectedIndex.value == 8,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 10.0, bottom: 5),
+                              child: Container(
+                                width: 245,
+                                height: 47,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.rectangle,
+                                    color: GlobalColors.whiteText,
+                                    borderRadius: BorderRadiusDirectional.all(
+                                        Radius.circular(5))),
+                                child: Center(
+                                  child: ListTile(
+                                    onTap: () async {
+                                      SharedPreferences prefs =
+                                          await SharedPreferences.getInstance();
+                                      await prefs.clear();
+                                      Get.to(() => LoginScreen());
+                                    },
+                                    selected: false,
+                                    leading: Icon(
+                                      Icons.logout_sharp,
+                                      color: GlobalColors.errorRed,
+                                      size: 28,
+                                    ),
+                                    title: Text('Logout',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: GlobalColors.errorRed,
+                                        )),
+                                  ),
+                                ),
+                              ),
                             ),
                             SizedBox(
                               height: 20,

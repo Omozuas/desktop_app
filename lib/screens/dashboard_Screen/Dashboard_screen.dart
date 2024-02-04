@@ -72,7 +72,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
       child: Scaffold(
         key: _scaffoldkey,
         backgroundColor: GlobalColors.whiteText,
-        body: SingleChildScrollView(
+        body: 
+        SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -149,7 +150,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               size: 20,
                             ),
                             Text(
-                              'New project',
+                              'New user',
                               style: TextStyle(
                                   color: GlobalColors.DarkBorder,
                                   fontSize: 16,
