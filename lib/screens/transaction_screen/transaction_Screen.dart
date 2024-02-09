@@ -1,4 +1,9 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
+import 'package:codegraniteflutter/screens/transaction_screen/all_transaction_messages.dart';
+import 'package:codegraniteflutter/screens/transaction_screen/final_transaction_widget.dart';
+import 'package:codegraniteflutter/screens/transaction_screen/initial_transaction_screen.dart';
+import 'package:codegraniteflutter/screens/transaction_screen/widget/payment_description_header.dart';
+import 'package:codegraniteflutter/screens/transaction_screen/widget/no_transaction.dart';
 import 'package:codegraniteflutter/widgets/containers/containrs_widegt.dart';
 import 'package:codegraniteflutter/widgets/containers/headerContainerTitel_widget.dart';
 import 'package:codegraniteflutter/widgets/dropdownBox/twoDropdownBox_widget.dart';
@@ -23,76 +28,95 @@ class _TransactionScreenState extends State<TransactionScreen> {
     return Expanded(
       child: Scaffold(
         key: _scaffoldkey,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            HeaderContainerTitle(title: 'Transaction'),
-            Divider(),
-            Padding(
-              padding:
-                  EdgeInsets.only(left: 30, right: 30, top: 15, bottom: 15),
-              child: Row(children: [
-                Expanded(
-                  child: EmptyContainer(
-                    width: 473,
-                    height: 45,
-                    boderColor: GlobalColors.lightBorder,
-                    child: SearchBox(
-                      text: 'Search for clients...',
-                      controller: searchController,
-                      iconData: CupertinoIcons.search,
-                      iconSize: 20,
-                      keys: formKey,
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              HeaderContainerTitle(title: 'Transaction'),
+              const Divider(),
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 10, right: 10, top: 15, bottom: 15),
+                child: Row(children: [
+                  Expanded(
+                    flex: 1,
+                    child: EmptyContainer(
+                      width: 473,
+                      height: 45,
+                      boderColor: GlobalColors.lightBorder,
+                      child: SearchBox(
+                        text: 'Search for clients...',
+                        controller: searchController,
+                        iconData: CupertinoIcons.search,
+                        iconSize: 20,
+                        keys: formKey,
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: 200,
-                ),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Icon(
-                    Icons.filter_list,
-                    color: GlobalColors.DarkBorder,
-                    size: 20,
+                  const SizedBox(
+                    width: 200,
                   ),
-                  SizedBox(
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Container(
+                      constraints:
+                          const BoxConstraints(maxHeight: 20.0, maxWidth: 20.0),
+                      child: Icon(
+                        Icons.filter_list,
+                        color: GlobalColors.DarkBorder,
+                        size: 20,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Container(
+                      constraints:
+                          const BoxConstraints(maxHeight: 20.0, maxWidth: 53.6),
+                      child: Text(
+                        'Filter by',
+                        style: TextStyle(
+                            color: GlobalColors.DarkBorder,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ]),
+                  const SizedBox(
                     width: 5,
                   ),
-                  Text(
-                    'Filter by',
-                    style: TextStyle(
-                        color: GlobalColors.DarkBorder,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
+                  Flexible(
+                    child: DropDownMenu4(
+                      onchange: (newValue) {
+                        setState(() {
+                          dropdown = newValue;
+                          print(newValue);
+                        });
+                      },
+                      dropdown: dropdown,
+                      vale1: 'All Transaction',
+                      text1: 'All Transaction',
+                      vale2: 'Initial Transaction',
+                      text2: 'Initial Transaction',
+                      vale3: 'Final Transaction',
+                      text3: 'Final Transaction',
+                    ),
                   ),
                 ]),
-                SizedBox(
-                  width: 5,
-                ),
-                Flexible(
-                  child: DropDownMenu4(
-                    onchange: (newValue) {
-                      setState(() {
-                        dropdown = newValue;
-                        print(newValue);
-                      });
-                    },
-                    dropdown: dropdown,
-                    vale1: 'All Transaction',
-                    text1: 'All Transaction',
-                    vale2: 'Initial Transaction',
-                    text2: 'Initial Transaction',
-                    vale3: 'Final Transaction',
-                    text3: 'Final Transaction',
-                  ),
-                ),
-              ]),
-            ),
-            Divider(),
-            ////start from here
-          ],
+              ),
+
+              ////start from here
+              ///
+
+              const InitialTransactionWidget()
+              // const FinalTransactionWidget()
+            ],
+          ),
         ),
       ),
+      // ],
+      //),
+      //),
+      //),
     );
   }
 }
