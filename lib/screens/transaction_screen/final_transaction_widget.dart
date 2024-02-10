@@ -8,13 +8,14 @@ class FinalTransactionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int num = 1;
     return Column(children: [
       Padding(
           padding: const EdgeInsets.only(
             top: 15,
           ),
           child: Container(
-              width: 1171,
+              width: 1471,
               height: 782,
               decoration: BoxDecoration(
                 border: Border.all(width: 1, color: GlobalColors.lightBorder),
@@ -62,10 +63,10 @@ class FinalTransactionWidget extends StatelessWidget {
                             shrinkWrap: false,
                             itemCount: 15,
                             itemBuilder: (BuildContext context, int index) {
-                              return const Column(
+                              return Column(
                                 children: [
                                   FinalTransactionBuilder(
-                                    text1: '1',
+                                    text1: '${num++}',
                                     text2: 'Dashboard Design',
                                     text3: 'NGN 100',
                                     text4: 'Final',

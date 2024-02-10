@@ -13,7 +13,7 @@ class FieldDescription extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 15),
       child: Container(
-        width: 1173,
+        width: 1473,
         decoration: BoxDecoration(
             border: Border.all(width: 1, color: GlobalColors.lightBorder)),
         child: Column(

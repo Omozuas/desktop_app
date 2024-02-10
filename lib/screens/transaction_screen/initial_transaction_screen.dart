@@ -8,6 +8,7 @@ class InitialTransactionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int num = 1;
     return Column(children: [
       Padding(
           padding: const EdgeInsets.only(
@@ -15,7 +16,7 @@ class InitialTransactionWidget extends StatelessWidget {
           ),
           child: Container(
               // width: 1170, for all transaction
-              width: 1171,
+              width: 1471,
               height: 782,
               decoration: BoxDecoration(
                 border: Border.all(width: 1, color: GlobalColors.lightBorder),
@@ -62,13 +63,13 @@ class InitialTransactionWidget extends StatelessWidget {
                   Flexible(
                     child: ListView.builder(
                         scrollDirection: Axis.vertical,
-                        shrinkWrap: false,
+                        shrinkWrap: true,
                         itemCount: 15,
                         itemBuilder: (BuildContext context, int index) {
                           return Column(
                             children: [
                               TransactionDetailsBuilder(
-                                text1: '1',
+                                text1: '${num++}',
                                 text2: 'Dashboard Design',
                                 text3: 'NGN 100',
                                 text4: 'Initial',
