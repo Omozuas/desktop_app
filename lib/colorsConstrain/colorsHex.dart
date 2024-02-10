@@ -18,4 +18,5 @@ class GlobalColors {
   static HexColor lightGreen = HexColor('#80BD92');
   static HexColor lightgray = HexColor('#E8E8E8');
   static HexColor deepBlue = HexColor('#052C42');
+  static HexColor backgroundgray = HexColor('#F6F6F6');
 }
