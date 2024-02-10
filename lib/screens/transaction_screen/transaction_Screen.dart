@@ -107,7 +107,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
               ////start from here
               ///
 
-              const InitialTransactionWidget()
+              Center(child: const InitialTransactionWidget())
               // const FinalTransactionWidget()
             ],
           ),
