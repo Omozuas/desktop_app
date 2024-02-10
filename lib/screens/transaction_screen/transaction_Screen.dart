@@ -1,7 +1,7 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
-import 'package:codegraniteflutter/screens/transaction_screen/all_transaction_messages.dart';
+import 'package:codegraniteflutter/screens/transaction_screen/all_transaction_widget.dart';
 import 'package:codegraniteflutter/screens/transaction_screen/final_transaction_widget.dart';
-import 'package:codegraniteflutter/screens/transaction_screen/initial_transaction_screen.dart';
+import 'package:codegraniteflutter/screens/transaction_screen/initial_transaction_widget.dart';
 import 'package:codegraniteflutter/screens/transaction_screen/widget/payment_description_header.dart';
 import 'package:codegraniteflutter/screens/transaction_screen/widget/no_transaction.dart';
 import 'package:codegraniteflutter/widgets/containers/containrs_widegt.dart';

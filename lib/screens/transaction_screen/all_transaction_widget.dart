@@ -3,8 +3,8 @@ import 'package:codegraniteflutter/screens/transaction_screen/transaction_detail
 import 'package:codegraniteflutter/screens/transaction_screen/widget/payment_description_header.dart';
 import 'package:flutter/material.dart';
 
-class AllTransactionMessages extends StatelessWidget {
-  const AllTransactionMessages({super.key});
+class AllTransactionWidget extends StatelessWidget {
+  const AllTransactionWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,13 +58,12 @@ class AllTransactionMessages extends StatelessWidget {
                   ),
                   const FieldDescription(),
                   Flexible(
-                      child: 
-                     ListView.builder(
+                    child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         shrinkWrap: false,
                         itemCount: 15,
                         itemBuilder: (BuildContext context, int index) {
-                          return  Column(
+                          return Column(
                             children: [
                               TransactionDetailsBuilder(
                                 text1: '1',
@@ -74,7 +73,7 @@ class AllTransactionMessages extends StatelessWidget {
                                 text5: '11th Jan 2023',
                                 color1: GlobalColors.foundationblack100,
                                 color2: GlobalColors.foundationblack500,
-                                
+
                                 // padding: EdgeInsets.all(4),
                               ),
                               const Divider()
