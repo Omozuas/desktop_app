@@ -4,7 +4,11 @@ import 'package:codegraniteflutter/Local_storage/get_directory.dart';
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/projectcontroller.dart';
 import 'package:codegraniteflutter/widgets/buttons/rowWithDownlodAndShareButton.dart';
+import 'package:codegraniteflutter/widgets/buttons/smallButton.dart';
 import 'package:codegraniteflutter/widgets/containers/headerContainerTitel_widget.dart';
+import 'package:codegraniteflutter/widgets/imageContainee/circlerImageContainer_widget.dart';
+import 'package:codegraniteflutter/widgets/imageContainee/imagecontainerwithbutton2.dart';
+import 'package:codegraniteflutter/widgets/loginAndSignUP_widget/textFieldWithLabel_widget.dart';
 import 'package:codegraniteflutter/widgets/progressBar/progressBar1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
@@ -18,6 +22,8 @@ class DetailProject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey4 = GlobalKey<FormState>();
+    TextEditingController bioController = TextEditingController();
     String ddFile =
         'https://media.istockphoto.com/id/1352603244/photo/shot-of-an-unrecognizable-businessman-working-on-his-laptop-in-the-office.jpg?s=612x612&w=0&k=20&c=upiDYeAZEsxbUBdhX35MXm79drIXA-5Q-FcfmZk71lM=';
 
@@ -51,10 +57,12 @@ class DetailProject extends StatelessWidget {
                   EdgeInsets.only(left: 30, right: 30, top: 15, bottom: 15),
               child: Row(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                       flex: 2,
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
                               child: Padding(
@@ -687,7 +695,357 @@ class DetailProject extends StatelessWidget {
                                   bottom: Radius.circular(5)),
                             ),
                             width: 800,
-                          )
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Divider(),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Text(
+                            'Comments',
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                                fontSize: 17, fontWeight: FontWeight.w600),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          // Text(
+                          //   'There are no comments yet for this project',
+                          //   textAlign: TextAlign.center,
+                          //   style: TextStyle(
+                          //       fontSize: 14, fontWeight: FontWeight.w400),
+                          // ),
+                          Container(
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: 15, right: 15, top: 15, bottom: 15),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            CirclerImageContainer(
+                                              image:
+                                                  'assets/images/person2.png',
+                                              width: 35,
+                                              circleZize: 44,
+                                              height: 35,
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              'JohnDoe',
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                            Text(
+                                              '2 hours ago',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w400),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Text(
+                                          'Everything is looking good',
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ],
+                                    ),
+                                    IconButton(
+                                        onPressed: () {},
+                                        hoverColor: Colors.white,
+                                        color: GlobalColors.DarkBorder,
+                                        focusColor: Colors.white,
+                                        splashColor: Colors.white,
+                                        icon: Icon(Icons.more_horiz_sharp))
+                                  ],
+                                ),
+                              ),
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: GlobalColors.dividerLine),
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(5),
+                                    bottom: Radius.circular(5)),
+                              ),
+                              width: 800),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: 15, right: 15, top: 15, bottom: 15),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            CirclerImageContainer(
+                                              image:
+                                                  'assets/images/person2.png',
+                                              width: 35,
+                                              circleZize: 44,
+                                              height: 35,
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              'JohnDoe',
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                            Text(
+                                              '2 hours ago',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w400),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Text(
+                                          'Everything is looking good',
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ],
+                                    ),
+                                    IconButton(
+                                        onPressed: () {},
+                                        hoverColor: Colors.white,
+                                        color: GlobalColors.DarkBorder,
+                                        focusColor: Colors.white,
+                                        splashColor: Colors.white,
+                                        icon: Icon(Icons.more_horiz_sharp))
+                                  ],
+                                ),
+                              ),
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: GlobalColors.dividerLine),
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(5),
+                                    bottom: Radius.circular(5)),
+                              ),
+                              width: 800),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: 15, right: 15, top: 15, bottom: 15),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            CirclerImageContainer(
+                                              image:
+                                                  'assets/images/person2.png',
+                                              width: 35,
+                                              circleZize: 44,
+                                              height: 35,
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              'JohnDoe',
+                                              style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                            Text(
+                                              '2 hours ago',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w400),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Text(
+                                          'Everything is looking good',
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ],
+                                    ),
+                                    IconButton(
+                                        onPressed: () {},
+                                        hoverColor: Colors.white,
+                                        color: GlobalColors.DarkBorder,
+                                        focusColor: Colors.white,
+                                        splashColor: Colors.white,
+                                        icon: Icon(Icons.more_horiz_sharp))
+                                  ],
+                                ),
+                              ),
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: GlobalColors.dividerLine),
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(5),
+                                    bottom: Radius.circular(5)),
+                              ),
+                              width: 800),
+
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CirclerImageContainer(
+                                image: 'assets/images/person2.png',
+                                width: 30,
+                                circleZize: 44,
+                                height: 30,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Flexible(
+                                child: SizedBox(
+                                  width: 560,
+                                  child: TextFormField(
+                                    maxLines: 5,
+                                    validator: (value) {
+                                      if (value!.isEmpty ||
+                                          !RegExp(r'^[a-z A-Z]+$')
+                                              .hasMatch(value!)) {
+                                        return "Enter Your Full Name";
+                                      } else {
+                                        return null;
+                                      }
+                                    },
+                                    controller: bioController,
+                                    decoration: InputDecoration(
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                                vertical: 15, horizontal: 14),
+                                        hintText: 'Leave comment...',
+                                        hintMaxLines: 5,
+                                        helperStyle: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color:
+                                                    GlobalColors.lightBorder),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
+                                        focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: GlobalColors.DarkBorder),
+                                            borderRadius:
+                                                BorderRadius.circular(10))),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              SizedBox(
+                                width: 129,
+                                child: SmallButton(
+                                  buttonHeight: 50,
+                                  onPressed: () async {},
+                                  buttonWidth: 10,
+                                  child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Flexible(
+                                          child: Text(
+                                            'comment',
+                                            overflow: TextOverflow.ellipsis,
+                                            softWrap: true,
+                                            style: TextStyle(
+                                                color: GlobalColors.whiteText,
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 3,
+                                        ),
+                                        Icon(
+                                          Icons.send,
+                                          color: GlobalColors.whiteText,
+                                          size: 15,
+                                        ),
+                                      ]),
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       )),
                   SizedBox(
@@ -695,43 +1053,100 @@ class DetailProject extends StatelessWidget {
                   ),
                   Expanded(
                       child: Container(
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                                left: 15, right: 15, top: 15, bottom: 15),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Project Milestones',
-                                      style: TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400),
-                                    ),
-                                    IconButton(
-                                        onPressed: () {},
-                                        icon: Icon(
-                                            Icons.add_circle_outline_sharp))
-                                  ],
-                                ),
-                                Divider(),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                              ],
-                            ),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          left: 15, right: 15, top: 15, bottom: 15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Project Milestones',
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w400),
+                              ),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.add_circle_outline_sharp))
+                            ],
                           ),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: GlobalColors.dividerLine),
-                            shape: BoxShape.rectangle,
-                            borderRadius: BorderRadius.vertical(
-                                top: Radius.circular(5),
-                                bottom: Radius.circular(5)),
+                          Divider(),
+                          SizedBox(
+                            height: 10,
                           ),
-                          width: 372))
+                          // Center(
+                          //   child: Column(children: [
+                          //     Padding(
+                          //       padding:
+                          //           EdgeInsets.only(top: 15, bottom: 15),
+                          //       child: ImageConainerWithAddProjectButton4(
+                          //           ontap: () {
+                          //             // showDialog(
+                          //             //     context: context,
+                          //             //     builder: (builder) => ShowForm());
+                          //           },
+                          //           imageAsset:
+                          //               "assets/images/eempty box.png",
+                          //           buttonTitle: 'Create Milestones',
+                          //           textTitle:
+                          //               'No milestones have been created for this project yet, your milestones will appear here once they’ve been created.'),
+                          //     )
+                          //   ]),
+                          // ),
+                          SizedBox(
+                            height: 550,
+                            child: ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                physics: AlwaysScrollableScrollPhysics(
+                                    parent: AlwaysScrollableScrollPhysics()),
+                                shrinkWrap: true,
+                                padding: EdgeInsets.zero,
+                                itemCount: 15,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Column(
+                                    children: [
+                                      Row(children: [
+                                        Container(
+                                          margin: const EdgeInsets.all(5),
+                                          padding: const EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                            border: Border.all(
+                                                color: Colors.white, width: 1),
+                                            color: GlobalColors.deepBlue,
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                        Text(
+                                          'Project Milestones',
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400),
+                                        ),
+                                        Text(
+                                          'Project Milestones',
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400),
+                                        ),
+                                      ]),
+                                      const Divider()
+                                    ],
+                                  );
+                                }),
+                          ),
+                        ],
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: GlobalColors.dividerLine),
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(5), bottom: Radius.circular(5)),
+                    ),
+                    width: 372,
+                  ))
                 ],
               ),
             ),

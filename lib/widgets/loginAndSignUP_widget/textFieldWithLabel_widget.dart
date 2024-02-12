@@ -108,3 +108,43 @@ Widget largTextFiled(
     ),
   );
 }
+
+Widget largTextFiled2(
+    {hintText,
+    err,
+    controller2,
+    suffixIcon2,
+    keyboardType4,
+    validate,
+    onchange,
+    keys,
+    contentPadding,
+    obscureText = false}) {
+  return Form(
+    key: keys,
+    child: TextFormField(
+      maxLines: 5,
+      onChanged: onchange,
+      validator: validate,
+      controller: controller2,
+      keyboardType: keyboardType4,
+      obscureText: obscureText,
+      decoration: InputDecoration(
+          suffixIcon: suffixIcon2,
+          errorText: err,
+          contentPadding: contentPadding,
+          hintText: hintText,
+          hintMaxLines: 50,
+          helperStyle: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+          ),
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: GlobalColors.lightBorder),
+              borderRadius: BorderRadius.circular(10)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: GlobalColors.DarkBorder),
+              borderRadius: BorderRadius.circular(10))),
+    ),
+  );
+}

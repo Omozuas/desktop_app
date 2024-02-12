@@ -1,4 +1,5 @@
 import 'package:codegraniteflutter/screens/client_Screen/client_Screen.dart';
+import 'package:codegraniteflutter/screens/inviteScreen/invite_Screen.dart';
 import 'package:codegraniteflutter/screens/notification_Screen/Notification_Screen.dart';
 import 'package:codegraniteflutter/screens/problemStatement_Screen/problemStatement_screen.dart';
 import 'package:codegraniteflutter/screens/project/project_Screen.dart';
@@ -19,7 +20,7 @@ class NavigationController extends GetxController {
     TransactionScreen(),
     Container(color: Colors.green),
     NotificationScreen(),
-    Container(color: Colors.grey),
+    InviteScreen(),
     SettingsScreen(),
   ];
 }
