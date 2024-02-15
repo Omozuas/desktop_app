@@ -5,17 +5,15 @@ import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/projectcontroller.dart';
 import 'package:codegraniteflutter/widgets/buttons/rowWithDownlodAndShareButton.dart';
 import 'package:codegraniteflutter/widgets/buttons/smallButton.dart';
-import 'package:codegraniteflutter/widgets/containers/headerContainerTitel_widget.dart';
 import 'package:codegraniteflutter/widgets/imageContainee/circlerImageContainer_widget.dart';
-import 'package:codegraniteflutter/widgets/imageContainee/imagecontainerwithbutton2.dart';
-import 'package:codegraniteflutter/widgets/loginAndSignUP_widget/textFieldWithLabel_widget.dart';
+import 'package:codegraniteflutter/widgets/popUp_widget/firstPopup.dart';
 import 'package:codegraniteflutter/widgets/progressBar/progressBar1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:path/path.dart';
+import 'package:popover/popover.dart';
 
 class DetailProject extends StatelessWidget {
   const DetailProject({super.key});
@@ -28,6 +26,42 @@ class DetailProject extends StatelessWidget {
         'https://media.istockphoto.com/id/1352603244/photo/shot-of-an-unrecognizable-businessman-working-on-his-laptop-in-the-office.jpg?s=612x612&w=0&k=20&c=upiDYeAZEsxbUBdhX35MXm79drIXA-5Q-FcfmZk71lM=';
 
     final controller = Get.put(ProjectController());
+    List<dynamic> status = [
+      'completed',
+      'inprogress',
+      'pending',
+      'inprogress',
+      'completed',
+      'completed',
+      'inprogress',
+      'pending',
+      'inprogress',
+      'completed',
+      'completed',
+      'inprogress',
+      'pending',
+      'inprogress',
+      'completed'
+    ];
+    List<dynamic> dummydata = [
+      'Requirements gathering & Analysis',
+      'Project Initiation and planning',
+      'Technology stack selection',
+      'Database design and setup',
+      'User Interface (UI) design',
+      'User authentication and autho...',
+      'Document upload and indexing',
+      'Search and retrieval functionality',
+      'Security and compliance',
+      'User testing and quality assurance',
+      'Deployment',
+      'User authentication and autho...',
+      'Technology stack selection',
+      'Database design and setup',
+      'Search and retrieval functionality',
+    ];
+    Color color;
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -81,10 +115,24 @@ class DetailProject extends StatelessWidget {
                                               fontSize: 14,
                                               fontWeight: FontWeight.w400),
                                         ),
-                                        IconButton(
-                                            onPressed: () {},
-                                            icon:
-                                                Icon(Icons.more_vert_outlined))
+                                        Popupf(
+                                          munelist: [
+                                            PopupMenuItem(
+                                                onTap: () {},
+                                                child: ListTile(
+                                                  leading: Icon(Icons.edit),
+                                                  title: Text('Edit Project'),
+                                                )),
+                                            PopupMenuItem(
+                                                onTap: () {},
+                                                child: ListTile(
+                                                  leading: Icon(
+                                                      Icons.delete_outline),
+                                                  title: Text('Delete Project'),
+                                                ))
+                                          ],
+                                          icon: Icon(Icons.more_vert_outlined),
+                                        )
                                       ],
                                     ),
                                     Divider(),
@@ -773,13 +821,24 @@ class DetailProject extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    IconButton(
-                                        onPressed: () {},
-                                        hoverColor: Colors.white,
-                                        color: GlobalColors.DarkBorder,
-                                        focusColor: Colors.white,
-                                        splashColor: Colors.white,
-                                        icon: Icon(Icons.more_horiz_sharp))
+                                    Popupf(
+                                      munelist: [
+                                        PopupMenuItem(
+                                            onTap: () {},
+                                            child: ListTile(
+                                              leading: Icon(Icons.repeat),
+                                              title: Text('Reply to comment'),
+                                            )),
+                                        PopupMenuItem(
+                                            onTap: () {},
+                                            child: ListTile(
+                                              leading:
+                                                  Icon(Icons.delete_outline),
+                                              title: Text('Delete Comment'),
+                                            )),
+                                      ],
+                                      icon: Icon(Icons.more_horiz_rounded),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -850,13 +909,24 @@ class DetailProject extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    IconButton(
-                                        onPressed: () {},
-                                        hoverColor: Colors.white,
-                                        color: GlobalColors.DarkBorder,
-                                        focusColor: Colors.white,
-                                        splashColor: Colors.white,
-                                        icon: Icon(Icons.more_horiz_sharp))
+                                    Popupf(
+                                      munelist: [
+                                        PopupMenuItem(
+                                            onTap: () {},
+                                            child: ListTile(
+                                              leading: Icon(Icons.repeat),
+                                              title: Text('Reply to comment'),
+                                            )),
+                                        PopupMenuItem(
+                                            onTap: () {},
+                                            child: ListTile(
+                                              leading:
+                                                  Icon(Icons.delete_outline),
+                                              title: Text('Delete Comment'),
+                                            )),
+                                      ],
+                                      icon: Icon(Icons.more_horiz_rounded),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -927,13 +997,24 @@ class DetailProject extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    IconButton(
-                                        onPressed: () {},
-                                        hoverColor: Colors.white,
-                                        color: GlobalColors.DarkBorder,
-                                        focusColor: Colors.white,
-                                        splashColor: Colors.white,
-                                        icon: Icon(Icons.more_horiz_sharp))
+                                    Popupf(
+                                      munelist: [
+                                        PopupMenuItem(
+                                            onTap: () {},
+                                            child: ListTile(
+                                              leading: Icon(Icons.repeat),
+                                              title: Text('Reply to comment'),
+                                            )),
+                                        PopupMenuItem(
+                                            onTap: () {},
+                                            child: ListTile(
+                                              leading:
+                                                  Icon(Icons.delete_outline),
+                                              title: Text('Delete Comment'),
+                                            )),
+                                      ],
+                                      icon: Icon(Icons.more_horiz_rounded),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -1067,9 +1148,17 @@ class DetailProject extends StatelessWidget {
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w400),
                               ),
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.add_circle_outline_sharp))
+                              Popupf(
+                                munelist: [
+                                  PopupMenuItem(
+                                      onTap: () {},
+                                      child: ListTile(
+                                        leading: Icon(Icons.add),
+                                        title: Text('Add Milestone'),
+                                      )),
+                                ],
+                                icon: Icon(Icons.add_circle_outline),
+                              )
                             ],
                           ),
                           Divider(),
@@ -1103,34 +1192,101 @@ class DetailProject extends StatelessWidget {
                                     parent: AlwaysScrollableScrollPhysics()),
                                 shrinkWrap: true,
                                 padding: EdgeInsets.zero,
-                                itemCount: 15,
-                                itemBuilder: (BuildContext context, int index) {
+                                itemCount: dummydata.length,
+                                itemBuilder: (BuildContext context, index) {
+                                  if (status[index] == 'completed') {
+                                    color = GlobalColors.successGreen;
+                                  } else if (status[index] == 'inprogress') {
+                                    color = Colors.yellow;
+                                  } else if (status[index] == 'pending') {
+                                    color = GlobalColors.DarkBorder;
+                                  } else {
+                                    // Default to green if progress exceeds 157%
+                                    color = Colors.green;
+                                  }
                                   return Column(
                                     children: [
-                                      Row(children: [
-                                        Container(
-                                          margin: const EdgeInsets.all(5),
-                                          padding: const EdgeInsets.all(5),
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                                color: Colors.white, width: 1),
-                                            color: GlobalColors.deepBlue,
-                                            shape: BoxShape.circle,
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Container(
+                                                margin: const EdgeInsets.all(5),
+                                                padding:
+                                                    const EdgeInsets.all(5),
+                                                decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                      color: Colors.white,
+                                                      width: 1),
+                                                  color: GlobalColors.deepBlue,
+                                                  shape: BoxShape.circle,
+                                                ),
+                                              ),
+                                              Text(
+                                                '${dummydata[index]}',
+                                                softWrap: true,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                    fontSize: 14,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                            ],
                                           ),
-                                        ),
-                                        Text(
-                                          'Project Milestones',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400),
-                                        ),
-                                        Text(
-                                          'Project Milestones',
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400),
-                                        ),
-                                      ]),
+                                          Popupf(
+                                            munelist: [
+                                              PopupMenuItem(
+                                                  onTap: () {},
+                                                  child: ListTile(
+                                                    leading: Icon(Icons.edit),
+                                                    title:
+                                                        Text('Edit Milestone'),
+                                                  )),
+                                              PopupMenuItem(
+                                                  onTap: () {},
+                                                  child: ListTile(
+                                                    leading: Icon(
+                                                        Icons.delete_outline),
+                                                    title: Text(
+                                                        'Delete Milestone'),
+                                                  )),
+                                              PopupMenuItem(
+                                                  onTap: () {},
+                                                  child: ListTile(
+                                                    leading: Icon(
+                                                        CupertinoIcons.slowmo),
+                                                    title:
+                                                        Text('Change status'),
+                                                  )),
+                                            ],
+                                            icon: Icon(Icons.more_vert),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'Status',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                          SizedBox(
+                                            width: 4,
+                                          ),
+                                          Text(
+                                            '(${status[index]})',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: color,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                        ],
+                                      ),
                                       const Divider()
                                     ],
                                   );

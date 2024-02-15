@@ -1,6 +1,5 @@
 import 'package:codegraniteflutter/firstNav_Menu.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
-import 'package:codegraniteflutter/screens/transaction_screen/transaction_Screen.dart';
 import 'package:codegraniteflutter/services/Apis/AuthApi/registerApi.dart';
 import 'package:codegraniteflutter/services/Apis/GetInfoFromApi/getUserById.dart';
 import 'package:country_code_picker/country_code_picker.dart';
