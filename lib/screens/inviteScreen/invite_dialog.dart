@@ -26,16 +26,16 @@ class InviteDialog extends StatelessWidget {
                         textAlign: TextAlign.center)),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 150, top: 10, right: 20),
-                child: SizedBox(
-                  width: 24,
-                  height: 24,
-                  child: GestureDetector(
-                    onTap: () {
-                      Get.back();
-                      print('Button tapped');
-                    },
-                    child: const Icon(Icons.cancel_outlined),
+                padding: const EdgeInsets.only(left: 150, top: 10, right: 20),
+                child: GestureDetector(
+                  onTap: () {
+                    Get.back();
+                    print('Button tapped');
+                  },
+                  child: const SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: Icon(Icons.cancel_outlined),
                   ),
                 ),
               )
@@ -132,27 +132,28 @@ class InviteDialog extends StatelessWidget {
             ),
           ),
           Center(
-            child: Container(
-              height: 56,
-              width: 180,
-              decoration: BoxDecoration(
-                  color: GlobalColors.buttonBlue,
-                  borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(8), bottom: Radius.circular(8))),
-              child: Center(
-                  child: GestureDetector(
-                onTap: () {
-                  Get.back();
-                  print('Button tapped');
-                },
-                child: Text(
-                  'Submit',
-                  style: TextStyle(
-                      color: GlobalColors.whiteText,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500),
+            child: GestureDetector(
+              onTap: () {
+                Get.back();
+                print('Button tapped');
+              },
+              child: Container(
+                height: 56,
+                width: 180,
+                decoration: BoxDecoration(
+                    color: GlobalColors.buttonBlue,
+                    borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(8), bottom: Radius.circular(8))),
+                child: Center(
+                  child: Text(
+                    'Submit',
+                    style: TextStyle(
+                        color: GlobalColors.whiteText,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
-              )),
+              ),
             ),
           )
         ],
