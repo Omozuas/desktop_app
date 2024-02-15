@@ -1,5 +1,6 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
+import 'package:codegraniteflutter/screens/inviteScreen/invite_dialog.dart';
 import 'package:codegraniteflutter/services/Apis/GetInfoFromApi/getUserById.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/NavController.dart';
 import 'package:codegraniteflutter/widgets/navProfileMenue_widget/navProfileMenue_widget.dart';
@@ -153,7 +154,17 @@ class _NavigationMenueState extends State<NavigationMenue> {
                               width: 245,
                               height: 47,
                               title: 'Invite',
-                              onTap: () => controller.selectedIndex.value = 7,
+                              onTap: () {
+                                // I added a show dialog here to make it a popup when the invite button is tapped
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return const AlertDialog(
+                                        content: InviteDialog(),
+                                      );
+                                    });
+                              },
+                              // => controller.selectedIndex.value = 7,
                               selected: controller.selectedIndex.value == 7,
                             ),
                             SizedBox(

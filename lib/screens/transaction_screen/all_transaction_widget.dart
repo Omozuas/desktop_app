@@ -8,6 +8,7 @@ class AllTransactionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int num = 1;
     return Column(children: [
       Padding(
           padding: const EdgeInsets.only(
@@ -66,7 +67,7 @@ class AllTransactionWidget extends StatelessWidget {
                           return Column(
                             children: [
                               TransactionDetailsBuilder(
-                                text1: '1',
+                                text1: '${num++}',
                                 text2: 'Dashboard Design',
                                 text3: 'NGN 100',
                                 text4: 'Initial',
@@ -76,7 +77,7 @@ class AllTransactionWidget extends StatelessWidget {
 
                                 // padding: EdgeInsets.all(4),
                               ),
-                              const Divider()
+                              const Divider(),
                             ],
                           );
                         }),
