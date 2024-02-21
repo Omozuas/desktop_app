@@ -68,7 +68,9 @@ class _MessageBoxScreenState extends State<MessageBoxScreen> {
                   Row(
                     children: [
                       GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
                           child: Icon(
                             CupertinoIcons.minus,
                           )),
@@ -84,7 +86,9 @@ class _MessageBoxScreenState extends State<MessageBoxScreen> {
                         width: 10,
                       ),
                       GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
                           child: Icon(
                             CupertinoIcons.clear,
                           )),
