@@ -123,7 +123,7 @@ Widget largTextFiled2(
   return Form(
     key: keys,
     child: TextFormField(
-      maxLines: 5,
+      maxLines: 6,
       onChanged: onchange,
       validator: validate,
       controller: controller2,
@@ -145,6 +145,48 @@ Widget largTextFiled2(
           focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: GlobalColors.DarkBorder),
               borderRadius: BorderRadius.circular(10))),
+    ),
+  );
+}
+
+Widget textFiled01(
+    {hintText,
+    err,
+    controller2,
+    keyboardType4,
+    validate,
+    onchange,
+    keys,
+    obscureText = false}) {
+  return Form(
+    key: keys,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const SizedBox(height: 5),
+        TextFormField(
+          onChanged: onchange,
+          validator: validate,
+          controller: controller2,
+          keyboardType: keyboardType4,
+          obscureText: obscureText,
+          decoration: InputDecoration(
+              errorText: err,
+              contentPadding:
+                  const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              hintText: hintText,
+              helperStyle: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+              ),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: GlobalColors.lightBorder),
+                  borderRadius: BorderRadius.circular(10)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: GlobalColors.DarkBorder),
+                  borderRadius: BorderRadius.circular(10))),
+        ),
+      ],
     ),
   );
 }
