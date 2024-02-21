@@ -1,4 +1,5 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
+import 'package:codegraniteflutter/screens/messages_screen/widgets/messageBoxScreen.dart';
 import 'package:codegraniteflutter/widgets/buttons/transparentButton.dart';
 import 'package:codegraniteflutter/widgets/containers/containrs_widegt.dart';
 import 'package:codegraniteflutter/widgets/responsive/responsive.dart';
@@ -32,7 +33,11 @@ class RecivedMessagesScreen extends StatelessWidget {
                   child: TransparentButton(
                       buttonHeight: 56,
                       buttonWidth: 100,
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) => MessageBoxScreen());
+                      },
                       backgroundcolor: Colors.white,
                       borderColor: GlobalColors.buttonBlue,
                       child: Row(
