@@ -19,7 +19,7 @@ class RowWithDownloadAndShareButton extends StatelessWidget {
       children: [
         Row(
           children: [
-            Icon(CupertinoIcons.doc),
+            Image.asset('assets/images/document.png'),
             SizedBox(
               width: 5,
             ),
@@ -34,8 +34,9 @@ class RowWithDownloadAndShareButton extends StatelessWidget {
           children: [
             Row(
               children: [
-                IconButton(
-                    onPressed: sharebutton, icon: Icon(Icons.share_sharp)),
+                GestureDetector(
+                    onTap: sharebutton,
+                    child: Image.asset('assets/images/share.png')),
                 SizedBox(
                   width: 5,
                 ),
@@ -51,9 +52,9 @@ class RowWithDownloadAndShareButton extends StatelessWidget {
             ),
             Row(
               children: [
-                IconButton(
-                    onPressed: downloadbutton,
-                    icon: Icon(Icons.file_download_rounded)),
+                GestureDetector(
+                    onTap: downloadbutton,
+                    child: Image.asset('assets/images/document-download.png')),
                 SizedBox(
                   width: 5,
                 ),

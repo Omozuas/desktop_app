@@ -112,26 +112,28 @@ class DetailProject extends StatelessWidget {
                                         Text(
                                           'Project Detail',
                                           style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400),
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600),
                                         ),
                                         Popupf(
                                           munelist: [
                                             PopupMenuItem(
                                                 onTap: () {},
                                                 child: ListTile(
-                                                  leading: Icon(Icons.edit),
+                                                  leading: Image.asset(
+                                                      'assets/images/edit-2.png'),
                                                   title: Text('Edit Project'),
                                                 )),
                                             PopupMenuItem(
                                                 onTap: () {},
                                                 child: ListTile(
-                                                  leading: Icon(
-                                                      Icons.delete_outline),
+                                                  leading: Image.asset(
+                                                      'assets/images/trash.png'),
                                                   title: Text('Delete Project'),
                                                 ))
                                           ],
-                                          icon: Icon(Icons.more_vert_outlined),
+                                          icon: Image.asset(
+                                              'assets/images/more.png'),
                                         )
                                       ],
                                     ),
@@ -689,10 +691,10 @@ class DetailProject extends StatelessWidget {
                                           children: [
                                             Row(
                                               children: [
-                                                IconButton(
-                                                    onPressed: () {},
-                                                    icon: Icon(
-                                                        Icons.share_sharp)),
+                                                GestureDetector(
+                                                    onTap: () {},
+                                                    child: Image.asset(
+                                                        'assets/images/share.png')),
                                                 SizedBox(
                                                   width: 5,
                                                 ),
@@ -709,10 +711,10 @@ class DetailProject extends StatelessWidget {
                                             ),
                                             Row(
                                               children: [
-                                                IconButton(
-                                                    onPressed: () {},
-                                                    icon: Icon(Icons
-                                                        .file_download_rounded)),
+                                                GestureDetector(
+                                                    onTap: () {},
+                                                    child: Image.asset(
+                                                        'assets/images/document-download.png')),
                                                 SizedBox(
                                                   width: 5,
                                                 ),
@@ -826,18 +828,20 @@ class DetailProject extends StatelessWidget {
                                         PopupMenuItem(
                                             onTap: () {},
                                             child: ListTile(
-                                              leading: Icon(Icons.repeat),
+                                              leading: Image.asset(
+                                                  'assets/images/repeat.png'),
                                               title: Text('Reply to comment'),
                                             )),
                                         PopupMenuItem(
                                             onTap: () {},
                                             child: ListTile(
-                                              leading:
-                                                  Icon(Icons.delete_outline),
+                                              leading: Image.asset(
+                                                  'assets/images/trash.png'),
                                               title: Text('Delete Comment'),
                                             )),
                                       ],
-                                      icon: Icon(Icons.more_horiz_rounded),
+                                      icon: Image.asset(
+                                          'assets/images/more (1).png'),
                                     ),
                                   ],
                                 ),
@@ -914,18 +918,20 @@ class DetailProject extends StatelessWidget {
                                         PopupMenuItem(
                                             onTap: () {},
                                             child: ListTile(
-                                              leading: Icon(Icons.repeat),
+                                              leading: Image.asset(
+                                                  'assets/images/repeat.png'),
                                               title: Text('Reply to comment'),
                                             )),
                                         PopupMenuItem(
                                             onTap: () {},
                                             child: ListTile(
-                                              leading:
-                                                  Icon(Icons.delete_outline),
+                                              leading: Image.asset(
+                                                  'assets/images/trash.png'),
                                               title: Text('Delete Comment'),
                                             )),
                                       ],
-                                      icon: Icon(Icons.more_horiz_rounded),
+                                      icon: Image.asset(
+                                          'assets/images/more (1).png'),
                                     ),
                                   ],
                                 ),
@@ -1002,18 +1008,20 @@ class DetailProject extends StatelessWidget {
                                         PopupMenuItem(
                                             onTap: () {},
                                             child: ListTile(
-                                              leading: Icon(Icons.repeat),
+                                              leading: Image.asset(
+                                                  'assets/images/repeat.png'),
                                               title: Text('Reply to comment'),
                                             )),
                                         PopupMenuItem(
                                             onTap: () {},
                                             child: ListTile(
-                                              leading:
-                                                  Icon(Icons.delete_outline),
+                                              leading: Image.asset(
+                                                  'assets/images/trash.png'),
                                               title: Text('Delete Comment'),
                                             )),
                                       ],
-                                      icon: Icon(Icons.more_horiz_rounded),
+                                      icon: Image.asset(
+                                          'assets/images/more (1).png'),
                                     ),
                                   ],
                                 ),
@@ -1096,7 +1104,7 @@ class DetailProject extends StatelessWidget {
                                 child: SmallButton(
                                   buttonHeight: 50,
                                   onPressed: () async {},
-                                  buttonWidth: 10,
+                                  buttonWidth: 12,
                                   child: Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
@@ -1115,13 +1123,9 @@ class DetailProject extends StatelessWidget {
                                           ),
                                         ),
                                         SizedBox(
-                                          width: 3,
+                                          width: 1,
                                         ),
-                                        Icon(
-                                          Icons.send,
-                                          color: GlobalColors.whiteText,
-                                          size: 15,
-                                        ),
+                                        Image.asset('assets/images/send-2.png')
                                       ]),
                                 ),
                               ),
@@ -1157,7 +1161,8 @@ class DetailProject extends StatelessWidget {
                                         title: Text('Add Milestone'),
                                       )),
                                 ],
-                                icon: Icon(Icons.add_circle_outline),
+                                icon:
+                                    Image.asset('assets/images/add-circle.png'),
                               )
                             ],
                           ),
@@ -1242,28 +1247,30 @@ class DetailProject extends StatelessWidget {
                                               PopupMenuItem(
                                                   onTap: () {},
                                                   child: ListTile(
-                                                    leading: Icon(Icons.edit),
+                                                    leading: Image.asset(
+                                                        'assets/images/edit-2.png'),
                                                     title:
                                                         Text('Edit Milestone'),
                                                   )),
                                               PopupMenuItem(
                                                   onTap: () {},
                                                   child: ListTile(
-                                                    leading: Icon(
-                                                        Icons.delete_outline),
+                                                    leading: Image.asset(
+                                                        'assets/images/trash.png'),
                                                     title: Text(
                                                         'Delete Milestone'),
                                                   )),
                                               PopupMenuItem(
                                                   onTap: () {},
                                                   child: ListTile(
-                                                    leading: Icon(
-                                                        CupertinoIcons.slowmo),
+                                                    leading: Image.asset(
+                                                        'assets/images/status.png'),
                                                     title:
                                                         Text('Change status'),
                                                   )),
                                             ],
-                                            icon: Icon(Icons.more_vert),
+                                            icon: Image.asset(
+                                                'assets/images/more.png'),
                                           ),
                                         ],
                                       ),
