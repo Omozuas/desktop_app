@@ -72,8 +72,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       child: Scaffold(
         key: _scaffoldkey,
         backgroundColor: GlobalColors.whiteText,
-        body: 
-        SingleChildScrollView(
+        body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

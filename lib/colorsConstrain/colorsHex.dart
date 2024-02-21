@@ -20,4 +20,7 @@ class GlobalColors {
   static HexColor deepBlue = HexColor('#052C42');
   static HexColor backgroundgray = HexColor('#F6F6F6');
   static HexColor greyText = HexColor('#9C9C9C');
+  static HexColor brownColor = HexColor('#5C5157');
+  static HexColor butterColoryellow = HexColor('#F3DE8A');
+  static HexColor lightWine = HexColor('#B493A3');
 }
