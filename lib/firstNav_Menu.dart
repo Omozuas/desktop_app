@@ -69,7 +69,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
           width: 250,
           color: GlobalColors.whiteText,
           child: SingleChildScrollView(
-            physics: AlwaysScrollableScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(),
             scrollDirection: Axis.vertical,
             child: Padding(
               padding: const EdgeInsets.only(left: 15, right: 1),
@@ -81,7 +81,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
                       child: Container(
                         width: 155,
                         height: 53,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.rectangle,
                           image: DecorationImage(
                             image:
@@ -167,7 +167,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
                               // => controller.selectedIndex.value = 7,
                               selected: controller.selectedIndex.value == 7,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             Divider(
@@ -175,7 +175,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
                               thickness: 1,
                               color: GlobalColors.dividerLine,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 40,
                             ),
                             NavMenueTab(
@@ -195,7 +195,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                     color: GlobalColors.whiteText,
-                                    borderRadius: BorderRadiusDirectional.all(
+                                    borderRadius: const BorderRadiusDirectional.all(
                                         Radius.circular(5))),
                                 child: Center(
                                   child: ListTile(
@@ -203,7 +203,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
                                       SharedPreferences prefs =
                                           await SharedPreferences.getInstance();
                                       await prefs.clear();
-                                      Get.to(() => LoginScreen());
+                                      Get.to(() => const LoginScreen());
                                     },
                                     selected: false,
                                     leading: Icon(
@@ -221,7 +221,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             Padding(
