@@ -12,7 +12,7 @@ class SubTitleAndButton extends StatelessWidget {
       required this.buttonIcon,
       required this.ontap});
   EdgeInsetsGeometry padding;
-  IconData iconData, buttonIcon;
+  Widget iconData, buttonIcon;
   String title, buttonTitle;
   VoidCallback ontap;
   @override
@@ -23,11 +23,7 @@ class SubTitleAndButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-            Icon(
-              iconData,
-              color: GlobalColors.iconDarkColor,
-              size: 20,
-            ),
+            iconData,
             SizedBox(
               width: 5,
             ),
@@ -42,11 +38,7 @@ class SubTitleAndButton extends StatelessWidget {
           GestureDetector(
             onTap: ontap,
             child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-              Icon(
-                buttonIcon,
-                color: GlobalColors.iconDarkColor,
-                size: 20,
-              ),
+              buttonIcon,
               SizedBox(
                 width: 5,
               ),

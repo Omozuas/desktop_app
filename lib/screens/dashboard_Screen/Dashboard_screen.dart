@@ -175,9 +175,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               padding: const EdgeInsets.only(
                                   left: 30.0, top: 15, right: 30, bottom: 15),
                               title: 'Available Projects',
-                              iconData: Icons.work_outline_rounded,
+                              iconData:
+                                  Image.asset('assets/images/briefcase.png'),
                               buttonTitle: 'Filter ',
-                              buttonIcon: Icons.filter_alt_outlined,
+                              buttonIcon: Image.asset(
+                                  'assets/images/document-filter.png'),
                               ontap: () {},
                             ),
                             Divider(),
@@ -2444,10 +2446,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         SubtitleWithIconButtonLast(
                           padding: const EdgeInsets.only(
                               left: 10.0, top: 15, right: 10, bottom: 15),
-                          iconData: Icons.receipt_long,
+                          iconData:
+                              Image.asset('assets/images/wallet-money.png'),
                           title: 'Transactions',
                           buttonTitle: 'View all',
-                          buttonIcon: Icons.arrow_forward_ios,
+                          buttonIcon:
+                              Image.asset('assets/images/arrow-right.png'),
                           ontap: () {},
                         ),
                         Divider(),
@@ -2490,7 +2494,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                   ),
                                                   DataColumn(
                                                     label: Container(
-                                                      width: 50,
+                                                      width: 60,
                                                       child: Text("Amount",
                                                           softWrap: true,
                                                           style: TextStyle(

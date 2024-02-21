@@ -64,11 +64,7 @@ class ProjectPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(
-                            Icons.file_copy_sharp,
-                            color: GlobalColors.deepBlue,
-                            size: 32,
-                          ),
+                          Image.asset('assets/images/folder-2.png'),
                           SizedBox(
                             height: 8,
                           ),

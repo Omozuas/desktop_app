@@ -1140,7 +1140,7 @@ class DetailProject extends StatelessWidget {
                       child: Container(
                     child: Padding(
                       padding: EdgeInsets.only(
-                          left: 15, right: 15, top: 15, bottom: 15),
+                          left: 5, right: 5, top: 15, bottom: 15),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -1150,7 +1150,7 @@ class DetailProject extends StatelessWidget {
                               Text(
                                 'Project Milestones',
                                 style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w400),
+                                    fontSize: 16, fontWeight: FontWeight.w500),
                               ),
                               Popupf(
                                 munelist: [

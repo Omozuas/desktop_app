@@ -12,7 +12,7 @@ class SubtitleWithIconButtonLast extends StatelessWidget {
       required this.buttonIcon,
       required this.ontap});
   EdgeInsetsGeometry padding;
-  IconData iconData, buttonIcon;
+  Widget iconData, buttonIcon;
   String title, buttonTitle;
   VoidCallback ontap;
 
@@ -24,11 +24,7 @@ class SubtitleWithIconButtonLast extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-            Icon(
-              iconData,
-              color: GlobalColors.DarkBorder,
-              size: 20,
-            ),
+            iconData,
             SizedBox(
               width: 5,
             ),
@@ -56,11 +52,7 @@ class SubtitleWithIconButtonLast extends StatelessWidget {
                   SizedBox(
                     width: 5,
                   ),
-                  Icon(
-                    buttonIcon,
-                    color: GlobalColors.DarkBorder,
-                    size: 20,
-                  ),
+                  buttonIcon,
                 ]),
           )
         ],
