@@ -5,8 +5,15 @@ class CreateProjectButton extends StatelessWidget {
   final String text;
   final double? width;
   final Color? color1, color2, color3;
+  final Function? onTap;
   const CreateProjectButton(
-      {super.key, required this.text, this.width, this.color1, this.color2, this.color3});
+      {super.key,
+      required this.text,
+      this.width,
+      this.color1,
+      this.color2,
+      this.color3,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +32,15 @@ class CreateProjectButton extends StatelessWidget {
             borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(8), bottom: Radius.circular(8)),
             color: color2 ?? GlobalColors.buttonBlue),
-        child: Text(
-          text,
-          style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: color3 ?? GlobalColors.whiteText),
+        child: GestureDetector(
+          onTap: () {},
+          child: Text(
+            text,
+            style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: color3 ?? GlobalColors.whiteText),
+          ),
         ),
       ),
     );

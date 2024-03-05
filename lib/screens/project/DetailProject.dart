@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:codegraniteflutter/Local_storage/get_directory.dart';
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/screens/project/add_project_dialog.dart';
+import 'package:codegraniteflutter/screens/project/delete_project_dialog.dart';
 import 'package:codegraniteflutter/screens/project/eddit_project_dialog.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/projectcontroller.dart';
 import 'package:codegraniteflutter/widgets/buttons/rowWithDownlodAndShareButton.dart';
@@ -101,8 +102,17 @@ class DetailProject extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: GlobalColors.dividerLine),
+                                shape: BoxShape.rectangle,
+                                borderRadius: const BorderRadius.vertical(
+                                    top: Radius.circular(5),
+                                    bottom: Radius.circular(5)),
+                              ),
+                              width: 800,
                               child: Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     left: 15, right: 15, top: 15, bottom: 15),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,7 +121,7 @@ class DetailProject extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
+                                        const Text(
                                           'Project Detail',
                                           style: TextStyle(
                                               fontSize: 16,
@@ -137,7 +147,7 @@ class DetailProject extends StatelessWidget {
                                                               contentPadding:
                                                                   null,
                                                               content:
-                                                                  EditProjectDialog()));
+                                                                  const EditProjectDialog()));
                                                   print('Button tapped');
                                                 },
                                                 child: ListTile(
@@ -146,7 +156,24 @@ class DetailProject extends StatelessWidget {
                                                   title: Text('Edit Project'),
                                                 )),
                                             PopupMenuItem(
-                                                onTap: () {},
+                                                onTap: () {
+                                                  showDialog(
+                                                      context: context,
+                                                      builder: (builder) =>
+                                                          AlertDialog(backgroundColor:
+                                                                  GlobalColors
+                                                                      .whiteText,
+                                                              shadowColor:
+                                                                  GlobalColors
+                                                                      .whiteText,
+                                                              surfaceTintColor:
+                                                                  GlobalColors
+                                                                      .whiteText,
+                                                              contentPadding:
+                                                                  null,
+                                                              content:
+                                                                  const DeleteProjectDialog()));
+                                                },
                                                 child: ListTile(
                                                   leading: Image.asset(
                                                       'assets/images/trash.png'),
@@ -447,16 +474,7 @@ class DetailProject extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                              ),
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: GlobalColors.dividerLine),
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(5),
-                                    bottom: Radius.circular(5)),
-                              ),
-                              width: 800),
+                              )),
                           SizedBox(
                             height: 30,
                           ),
