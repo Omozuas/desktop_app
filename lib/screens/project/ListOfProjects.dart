@@ -1,4 +1,5 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
+import 'package:codegraniteflutter/screens/project/add_project_dialog/add_project_dialog.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/projectcontroller.dart';
 import 'package:codegraniteflutter/widgets/buttons/smallButton.dart';
 import 'package:codegraniteflutter/widgets/dropdownBox/twoDropdownBox_widget.dart';
@@ -100,8 +101,15 @@ class _ListOfProjectState extends State<ListOfProject> {
             SmallButton(
               buttonHeight: 56,
               onPressed: () {
-                // showDialog(
-                //     context: context, builder: (builder) => ShowForm());
+                showDialog(
+                    context: context,
+                    builder: (builder) => AlertDialog(
+                        backgroundColor: GlobalColors.whiteText,
+                        shadowColor: GlobalColors.whiteText,
+                        surfaceTintColor: GlobalColors.whiteText,
+                        contentPadding: null,
+                        content: AddProjectDialog()));
+                print('Button tapped');
               },
               buttonWidth: 90,
               child:
