@@ -52,3 +52,16 @@ class DividedBox extends StatelessWidget {
   }
 }
 
+class CalendarWidget extends StatelessWidget {
+  const CalendarWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        width: 24,
+        height: 24,
+        child: Image.asset('assets/images/calendar.png'));
+  }
+}

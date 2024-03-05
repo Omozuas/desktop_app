@@ -2,18 +2,19 @@ import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:flutter/material.dart';
 
 class Box extends StatelessWidget {
-  final double h1,  h3;
-  
-  final String t1, t2;
-  
-  const Box({
-    super.key,
-    required this.h1,
-    required this.t1,
-    required this.h3,
-    required this.t2,
-    
-  });
+  final double h1, h3;
+
+  final String? t1, t2;
+  final Color? color;
+  final Widget? widget;
+  const Box(
+      {super.key,
+      required this.h1,
+      this.t1,
+      required this.h3,
+      this.t2,
+      this.color,
+      this.widget});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class Box extends StatelessWidget {
             width: 580,
             height: 22,
             child: Text(
-              t1,
+              t1!,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
@@ -46,13 +47,14 @@ class Box extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Center(
-                child: TextField(
-                    decoration: InputDecoration.collapsed(
-                        hintText: t2,
-                        hintStyle: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: GlobalColors.greyText))),
+                child: widget ??
+                    TextField(
+                        decoration: InputDecoration.collapsed(
+                            hintText: t2,
+                            hintStyle: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: color ?? GlobalColors.greyText))),
               ),
             ),
           ),

@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:codegraniteflutter/Local_storage/get_directory.dart';
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
+import 'package:codegraniteflutter/screens/project/add_project_dialog.dart';
+import 'package:codegraniteflutter/screens/project/eddit_project_dialog.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/projectcontroller.dart';
 import 'package:codegraniteflutter/widgets/buttons/rowWithDownlodAndShareButton.dart';
 import 'package:codegraniteflutter/widgets/buttons/smallButton.dart';
@@ -77,7 +79,7 @@ class DetailProject extends StatelessWidget {
                       controller.selectedIndex.value = 0;
                     },
                     icon: Icon(Icons.arrow_back_ios)),
-                Text("Back",
+                const Text("Back",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -118,7 +120,26 @@ class DetailProject extends StatelessWidget {
                                         Popupf(
                                           munelist: [
                                             PopupMenuItem(
-                                                onTap: () {},
+                                                onTap: () {
+                                                  showDialog(
+                                                      context: context,
+                                                      builder: (builder) =>
+                                                          AlertDialog(
+                                                              backgroundColor:
+                                                                  GlobalColors
+                                                                      .whiteText,
+                                                              shadowColor:
+                                                                  GlobalColors
+                                                                      .whiteText,
+                                                              surfaceTintColor:
+                                                                  GlobalColors
+                                                                      .whiteText,
+                                                              contentPadding:
+                                                                  null,
+                                                              content:
+                                                                  EditProjectDialog()));
+                                                  print('Button tapped');
+                                                },
                                                 child: ListTile(
                                                   leading: Image.asset(
                                                       'assets/images/edit-2.png'),

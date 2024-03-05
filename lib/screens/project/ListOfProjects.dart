@@ -1,5 +1,5 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
-import 'package:codegraniteflutter/screens/project/add_project_dialog/add_project_dialog.dart';
+import 'package:codegraniteflutter/screens/project/add_project_dialog.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/projectcontroller.dart';
 import 'package:codegraniteflutter/widgets/buttons/smallButton.dart';
 import 'package:codegraniteflutter/widgets/dropdownBox/twoDropdownBox_widget.dart';

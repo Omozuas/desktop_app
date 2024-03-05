@@ -1,14 +1,16 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
-import 'package:codegraniteflutter/screens/project/add_project_dialog/create_project_button.dart';
 import 'package:codegraniteflutter/screens/project/attachment_button.dart';
+import 'package:codegraniteflutter/screens/project/create_project_button.dart';
 import 'package:codegraniteflutter/screens/project/divided_box.dart';
 import 'package:codegraniteflutter/screens/project/sized_box.dart';
 import 'package:codegraniteflutter/screens/project/sized_box2.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class AddProjectDialog extends StatelessWidget {
-  const AddProjectDialog({super.key});
+class EditProjectDialog extends StatelessWidget {
+  const EditProjectDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class AddProjectDialog extends StatelessWidget {
                     width: 228,
                     height: 40,
                     child: Text(
-                      'Create New Project',
+                      'Edit Project',
                       style: TextStyle(
                           color: GlobalColors.foundationblack500,
                           fontWeight: FontWeight.w500,
@@ -66,31 +68,44 @@ class AddProjectDialog extends StatelessWidget {
                         h1: 82,
                         h3: 52,
                         t1: 'Project title',
-                        t2: 'Enter project details here'),
+                        t2: 'Emergency Response App'),
                     const Box(
                         h1: 223,
                         h3: 193,
                         t1: 'Project description',
-                        t2: "Please describe your project (optional)"),
-                    const Box(h1: 107, h3: 52, t1: 'Project owner', t2: 'xyz'),
-                    const Box(h1: 107, h3: 52, t1: 'Project owner', t2: 'xyz'),
+                        t2: '''Empower communities and individuals with the Emergency Response App, 
+                        a groundbreaking solution designed to enhance and expedite emergency assistance. 
+                        This app integrates real-time location tracking, 
+                        instant communication features, and emergency service coordination to
+                         provide swift response during critical situations.
+                          With an intuitive interface and seamless collaboration tools,
+                           the Emergency Response App is your go-to resource for rapid and
+                            effective crisis management. Prioritize safety and responsiveness 
+                            with this essential tool for emergency situations'''),
+                    const Box(
+                        h1: 107,
+                        h3: 52,
+                        t1: 'Project owner',
+                        t2: 'Karl Mbemba'),
+                    const Box(
+                        h1: 107, h3: 52, t1: 'Project owner', t2: 'John Doe'),
                     const Row(children: [
                       DividedBox(
                         t1: 'Start date',
-                        h1: 'DD/MM/YY',
+                        h1: '12/04/2024',
                         widget: CalendarWidget(),
                       ),
                       Spacer(),
                       DividedBox(
                         t1: 'End date',
-                        h1: 'DD/MM/YY',
+                        h1: '12/06/2024',
                         widget: CalendarWidget(),
                       )
                     ]),
                     BoxWithDropdown(
                       height1: 86,
                       text1: 'Total cost of project',
-                      text2: 'Enter amount',
+                      text2: "\$5000",
                       widget: const CurrencyWidget(),
                       color: GlobalColors.greyBackground,
                       width1: 476,
@@ -100,14 +115,10 @@ class AddProjectDialog extends StatelessWidget {
                     const Row(
                       children: [
                         DividedBox(
-                            t1: 'Initial Payment',
-                            widget: null,
-                            h1: 'Enter amount'),
+                            t1: 'Initial Payment', widget: null, h1: '\$3500'),
                         Spacer(),
                         DividedBox(
-                            widget: null,
-                            t1: 'Final Payment',
-                            h1: 'Enter amount'),
+                            widget: null, t1: 'Final Payment', h1: '\$1500'),
                       ],
                     ),
                     const SizedBox(height: 4),
@@ -128,14 +139,34 @@ class AddProjectDialog extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 10),
-                    const Box(
-                        h1: 82,
-                        t1: 'Additional Links (optional)',
-                        h3: 52,
-                        t2: 'Enter URL'),
+                    Box(
+                      h1: 82,
+                      t1: 'Additional Links (optional)',
+                      h3: 52,
+                      widget: Text(
+                        'https://www.figma.com/proto/ABCDE12345/My-Project?page-id=67890%3A1&node-id=67891%3A456',
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: GlobalColors.deepBlue),
+                      ),
+                      color: GlobalColors.lightBlue,
+                    ),
                     const SizedBox(height: 20),
-                    const Row(
-                      children: [SizedBox(width: 400), CreateProjectButton()],
+                    Row(
+                      children: [
+                        const SizedBox(width: 189),
+                        CreateProjectButton(
+                          color1: GlobalColors.buttonBlue,
+                          color2: GlobalColors.whiteText,
+                          color3: GlobalColors.buttonBlue,
+                          text: 'Cancel',
+                        ),
+                        const SizedBox(width: 28),
+                        const CreateProjectButton(
+                          text: 'Save Changes',
+                        )
+                      ],
                     )
                   ],
                 ),
@@ -145,19 +176,5 @@ class AddProjectDialog extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class CalendarWidget extends StatelessWidget {
-  const CalendarWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-        width: 24,
-        height: 24,
-        child: Image.asset('assets/images/calendar.png'));
   }
 }
