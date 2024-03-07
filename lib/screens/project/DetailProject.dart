@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:codegraniteflutter/Local_storage/get_directory.dart';
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
+import 'package:codegraniteflutter/screens/project/change_staus_dialog.dart';
 import 'package:codegraniteflutter/screens/project/create_new_milestone.dart';
 import 'package:codegraniteflutter/screens/project/create_project_dialog.dart';
 import 'package:codegraniteflutter/screens/project/delete_milestone.dart';
@@ -82,7 +83,7 @@ class DetailProject extends StatelessWidget {
                     onPressed: () {
                       controller.selectedIndex.value = 0;
                     },
-                    icon: Icon(Icons.arrow_back_ios)),
+                    icon: const Icon(Icons.arrow_back_ios)),
                 const Text("Back",
                     style: TextStyle(
                       fontSize: 18,
@@ -94,7 +95,7 @@ class DetailProject extends StatelessWidget {
           Center(
             child: Padding(
               padding:
-                  EdgeInsets.only(left: 30, right: 30, top: 15, bottom: 15),
+                  const EdgeInsets.only(left: 30, right: 30, top: 15, bottom: 15),
               child: Row(
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,7 +144,7 @@ class DetailProject extends StatelessWidget {
                                                 child: ListTile(
                                                   leading: Image.asset(
                                                       'assets/images/edit-2.png'),
-                                                  title: Text('Edit Project'),
+                                                  title: const Text('Edit Project'),
                                                 )),
                                             PopupMenuItem(
                                                 onTap: () {
@@ -155,7 +156,7 @@ class DetailProject extends StatelessWidget {
                                                 child: ListTile(
                                                   leading: Image.asset(
                                                       'assets/images/trash.png'),
-                                                  title: Text('Delete Project'),
+                                                  title: const Text('Delete Project'),
                                                 ))
                                           ],
                                           icon: Image.asset(
@@ -163,9 +164,9 @@ class DetailProject extends StatelessWidget {
                                         )
                                       ],
                                     ),
-                                    Divider(),
+                                    const Divider(),
                                     Padding(
-                                      padding: EdgeInsets.only(
+                                      padding: const EdgeInsets.only(
                                           left: 20,
                                           right: 15,
                                           top: 15,
@@ -174,7 +175,7 @@ class DetailProject extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Row(
+                                          const Row(
                                             children: [
                                               Text(
                                                 'Project Title:',
@@ -195,10 +196,10 @@ class DetailProject extends StatelessWidget {
                                               )
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 10,
                                           ),
-                                          Row(
+                                          const Row(
                                             children: [
                                               Text(
                                                 'Project ID:',
@@ -219,18 +220,18 @@ class DetailProject extends StatelessWidget {
                                               )
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 10,
                                           ),
                                           Row(
                                             children: [
-                                              Text('Project Status:',
+                                              const Text('Project Status:',
                                                   softWrap: true,
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w400,
                                                   )),
-                                              SizedBox(
+                                              const SizedBox(
                                                 width: 3,
                                               ),
                                               Flexible(
@@ -240,10 +241,10 @@ class DetailProject extends StatelessWidget {
                                                   progress: 153,
                                                 ),
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 width: 3,
                                               ),
-                                              Text('(In progress)',
+                                              const Text('(In progress)',
                                                   softWrap: true,
                                                   style: TextStyle(
                                                     fontSize: 14,
@@ -251,10 +252,10 @@ class DetailProject extends StatelessWidget {
                                                   )),
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 10,
                                           ),
-                                          Row(
+                                          const Row(
                                             children: [
                                               Text(
                                                 'Project Owner:',
@@ -275,10 +276,10 @@ class DetailProject extends StatelessWidget {
                                               )
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 10,
                                           ),
-                                          Row(
+                                          const Row(
                                             children: [
                                               Text(
                                                 'Project Manager:',
@@ -296,10 +297,10 @@ class DetailProject extends StatelessWidget {
                                               )
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 10,
                                           ),
-                                          Row(
+                                          const Row(
                                             children: [
                                               Text(
                                                 'Project Start Date:',
@@ -317,10 +318,10 @@ class DetailProject extends StatelessWidget {
                                               )
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 10,
                                           ),
-                                          Row(
+                                          const Row(
                                             children: [
                                               Text(
                                                 'Project End Date:',
@@ -338,13 +339,24 @@ class DetailProject extends StatelessWidget {
                                               )
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 10,
                                           ),
                                           Container(
-                                              child: Padding(
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    GlobalColors.backgroundgray,
+                                                shape: BoxShape.rectangle,
+                                                borderRadius:
+                                                    const BorderRadius.vertical(
+                                                        top: Radius.circular(5),
+                                                        bottom:
+                                                            Radius.circular(5)),
+                                              ),
+                                              width: 371,
+                                              child: const Padding(
                                                 padding:
-                                                    const EdgeInsets.all(15.0),
+                                                    EdgeInsets.all(15.0),
                                                 child: Column(
                                                   children: [
                                                     Row(
@@ -415,35 +427,24 @@ class DetailProject extends StatelessWidget {
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    GlobalColors.backgroundgray,
-                                                shape: BoxShape.rectangle,
-                                                borderRadius:
-                                                    BorderRadius.vertical(
-                                                        top: Radius.circular(5),
-                                                        bottom:
-                                                            Radius.circular(5)),
-                                              ),
-                                              width: 371),
+                                              )),
                                         ],
                                       ),
                                     ),
-                                    Divider(),
-                                    SizedBox(
+                                    const Divider(),
+                                    const SizedBox(
                                       height: 15,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Project Description:',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w500),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Empower communities and individuals with the Emergency Response App, a groundbreaking solution designed to enhance and expedite emergency assistance. This app integrates real-time location tracking, instant communication features, and emergency service coordination to provide swift response during critical situations. With an intuitive interface and seamless collaboration tools, the Emergency Response App is your go-to resource for rapid and effective crisis management. Prioritize safety and responsiveness with this essential tool for emergency situations.',
                                       softWrap: true,
                                       style: TextStyle(
@@ -453,23 +454,32 @@ class DetailProject extends StatelessWidget {
                                   ],
                                 ),
                               )),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           Container(
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: GlobalColors.dividerLine),
+                                shape: BoxShape.rectangle,
+                                borderRadius: const BorderRadius.vertical(
+                                    top: Radius.circular(5),
+                                    bottom: Radius.circular(5)),
+                              ),
+                              width: 800,
                               child: Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     left: 15, right: 15, top: 15, bottom: 15),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       'Project Documents',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w500),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 20,
                                     ),
                                     RowWithDownloadAndShareButton(
@@ -496,8 +506,8 @@ class DetailProject extends StatelessWidget {
                                         //     })
                                       },
                                     ),
-                                    Divider(),
-                                    SizedBox(
+                                    const Divider(),
+                                    const SizedBox(
                                       height: 5,
                                     ),
                                     RowWithDownloadAndShareButton(
@@ -524,8 +534,8 @@ class DetailProject extends StatelessWidget {
                                         //     })
                                       },
                                     ),
-                                    Divider(),
-                                    SizedBox(
+                                    const Divider(),
+                                    const SizedBox(
                                       height: 5,
                                     ),
                                     RowWithDownloadAndShareButton(
@@ -552,8 +562,8 @@ class DetailProject extends StatelessWidget {
                                         //     })
                                       },
                                     ),
-                                    Divider(),
-                                    SizedBox(
+                                    const Divider(),
+                                    const SizedBox(
                                       height: 5,
                                     ),
                                     RowWithDownloadAndShareButton(
@@ -580,8 +590,8 @@ class DetailProject extends StatelessWidget {
                                         //     })
                                       },
                                     ),
-                                    Divider(),
-                                    SizedBox(
+                                    const Divider(),
+                                    const SizedBox(
                                       height: 5,
                                     ),
                                     RowWithDownloadAndShareButton(
@@ -608,8 +618,8 @@ class DetailProject extends StatelessWidget {
                                         //     })
                                       },
                                     ),
-                                    Divider(),
-                                    SizedBox(
+                                    const Divider(),
+                                    const SizedBox(
                                       height: 5,
                                     ),
                                     GestureDetector(
@@ -623,20 +633,20 @@ class DetailProject extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                              ),
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: GlobalColors.dividerLine),
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(5),
-                                    bottom: Radius.circular(5)),
-                              ),
-                              width: 800),
-                          SizedBox(
+                              )),
+                          const SizedBox(
                             height: 30,
                           ),
                           Container(
+                            decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: GlobalColors.dividerLine),
+                              shape: BoxShape.rectangle,
+                              borderRadius: const BorderRadius.vertical(
+                                  top: Radius.circular(5),
+                                  bottom: Radius.circular(5)),
+                            ),
+                            width: 800,
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Column(
@@ -648,15 +658,15 @@ class DetailProject extends StatelessWidget {
                                         color: GlobalColors.DarkBorder,
                                         fontWeight: FontWeight.w600,
                                       )),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
-                                  Divider(),
-                                  SizedBox(
+                                  const Divider(),
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.all(20),
+                                    padding: const EdgeInsets.all(20),
                                     child: Column(
                                       children: [
                                         Row(
@@ -670,7 +680,7 @@ class DetailProject extends StatelessWidget {
                                                       GlobalColors.DarkBorder,
                                                   fontWeight: FontWeight.w600,
                                                 )),
-                                            SizedBox(width: 5),
+                                            const SizedBox(width: 5),
                                             Flexible(
                                               child: InkWell(
                                                 onTap: () {
@@ -701,7 +711,7 @@ class DetailProject extends StatelessWidget {
                                         //           ? VideoPlayer(_videoPlayerController)
                                         //           : Container(),
                                         // ),
-                                        Divider(),
+                                        const Divider(),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
@@ -712,10 +722,10 @@ class DetailProject extends StatelessWidget {
                                                     onTap: () {},
                                                     child: Image.asset(
                                                         'assets/images/share.png')),
-                                                SizedBox(
+                                                const SizedBox(
                                                   width: 5,
                                                 ),
-                                                Text('share',
+                                                const Text('share',
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       fontWeight:
@@ -723,7 +733,7 @@ class DetailProject extends StatelessWidget {
                                                     )),
                                               ],
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 25,
                                             ),
                                             Row(
@@ -732,7 +742,7 @@ class DetailProject extends StatelessWidget {
                                                     onTap: () {},
                                                     child: Image.asset(
                                                         'assets/images/document-download.png')),
-                                                SizedBox(
+                                                const SizedBox(
                                                   width: 5,
                                                 ),
                                                 Text("download",
@@ -753,30 +763,21 @@ class DetailProject extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: GlobalColors.dividerLine),
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.vertical(
-                                  top: Radius.circular(5),
-                                  bottom: Radius.circular(5)),
-                            ),
-                            width: 800,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
-                          Divider(),
-                          SizedBox(
+                          const Divider(),
+                          const SizedBox(
                             height: 15,
                           ),
-                          Text(
+                          const Text(
                             'Comments',
                             textAlign: TextAlign.start,
                             style: TextStyle(
                                 fontSize: 17, fontWeight: FontWeight.w600),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           // Text(
@@ -786,8 +787,17 @@ class DetailProject extends StatelessWidget {
                           //       fontSize: 14, fontWeight: FontWeight.w400),
                           // ),
                           Container(
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: GlobalColors.dividerLine),
+                                shape: BoxShape.rectangle,
+                                borderRadius: const BorderRadius.vertical(
+                                    top: Radius.circular(5),
+                                    bottom: Radius.circular(5)),
+                              ),
+                              width: 800,
                               child: Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     left: 15, right: 15, top: 15, bottom: 15),
                                 child: Row(
                                   mainAxisAlignment:
@@ -809,19 +819,19 @@ class DetailProject extends StatelessWidget {
                                               circleZize: 44,
                                               height: 35,
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 10,
                                             ),
-                                            Text(
+                                            const Text(
                                               'JohnDoe',
                                               style: TextStyle(
                                                   fontSize: 18,
                                                   fontWeight: FontWeight.w600),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 20,
                                             ),
-                                            Text(
+                                            const Text(
                                               '2 hours ago',
                                               style: TextStyle(
                                                   fontSize: 14,
@@ -829,10 +839,10 @@ class DetailProject extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 20,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Everything is looking good',
                                           style: TextStyle(
                                               fontSize: 14,
@@ -847,14 +857,14 @@ class DetailProject extends StatelessWidget {
                                             child: ListTile(
                                               leading: Image.asset(
                                                   'assets/images/repeat.png'),
-                                              title: Text('Reply to comment'),
+                                              title: const Text('Reply to comment'),
                                             )),
                                         PopupMenuItem(
                                             onTap: () {},
                                             child: ListTile(
                                               leading: Image.asset(
                                                   'assets/images/trash.png'),
-                                              title: Text('Delete Comment'),
+                                              title: const Text('Delete Comment'),
                                             )),
                                       ],
                                       icon: Image.asset(
@@ -862,22 +872,22 @@ class DetailProject extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                              ),
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: GlobalColors.dividerLine),
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(5),
-                                    bottom: Radius.circular(5)),
-                              ),
-                              width: 800),
-                          SizedBox(
+                              )),
+                          const SizedBox(
                             height: 10,
                           ),
                           Container(
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: GlobalColors.dividerLine),
+                                shape: BoxShape.rectangle,
+                                borderRadius: const BorderRadius.vertical(
+                                    top: Radius.circular(5),
+                                    bottom: Radius.circular(5)),
+                              ),
+                              width: 800,
                               child: Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     left: 15, right: 15, top: 15, bottom: 15),
                                 child: Row(
                                   mainAxisAlignment:
@@ -899,19 +909,19 @@ class DetailProject extends StatelessWidget {
                                               circleZize: 44,
                                               height: 35,
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 10,
                                             ),
-                                            Text(
+                                            const Text(
                                               'JohnDoe',
                                               style: TextStyle(
                                                   fontSize: 18,
                                                   fontWeight: FontWeight.w600),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 20,
                                             ),
-                                            Text(
+                                            const Text(
                                               '2 hours ago',
                                               style: TextStyle(
                                                   fontSize: 14,
@@ -919,10 +929,10 @@ class DetailProject extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 20,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Everything is looking good',
                                           style: TextStyle(
                                               fontSize: 14,
@@ -937,14 +947,14 @@ class DetailProject extends StatelessWidget {
                                             child: ListTile(
                                               leading: Image.asset(
                                                   'assets/images/repeat.png'),
-                                              title: Text('Reply to comment'),
+                                              title: const Text('Reply to comment'),
                                             )),
                                         PopupMenuItem(
                                             onTap: () {},
                                             child: ListTile(
                                               leading: Image.asset(
                                                   'assets/images/trash.png'),
-                                              title: Text('Delete Comment'),
+                                              title: const Text('Delete Comment'),
                                             )),
                                       ],
                                       icon: Image.asset(
@@ -952,22 +962,22 @@ class DetailProject extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                              ),
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: GlobalColors.dividerLine),
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(5),
-                                    bottom: Radius.circular(5)),
-                              ),
-                              width: 800),
-                          SizedBox(
+                              )),
+                          const SizedBox(
                             height: 10,
                           ),
                           Container(
+                              decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: GlobalColors.dividerLine),
+                                shape: BoxShape.rectangle,
+                                borderRadius: const BorderRadius.vertical(
+                                    top: Radius.circular(5),
+                                    bottom: Radius.circular(5)),
+                              ),
+                              width: 800,
                               child: Padding(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     left: 15, right: 15, top: 15, bottom: 15),
                                 child: Row(
                                   mainAxisAlignment:
@@ -989,19 +999,19 @@ class DetailProject extends StatelessWidget {
                                               circleZize: 44,
                                               height: 35,
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 10,
                                             ),
-                                            Text(
+                                            const Text(
                                               'JohnDoe',
                                               style: TextStyle(
                                                   fontSize: 18,
                                                   fontWeight: FontWeight.w600),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 20,
                                             ),
-                                            Text(
+                                            const Text(
                                               '2 hours ago',
                                               style: TextStyle(
                                                   fontSize: 14,
@@ -1009,10 +1019,10 @@ class DetailProject extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 20,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Everything is looking good',
                                           style: TextStyle(
                                               fontSize: 14,
@@ -1027,14 +1037,14 @@ class DetailProject extends StatelessWidget {
                                             child: ListTile(
                                               leading: Image.asset(
                                                   'assets/images/repeat.png'),
-                                              title: Text('Reply to comment'),
+                                              title: const Text('Reply to comment'),
                                             )),
                                         PopupMenuItem(
                                             onTap: () {},
                                             child: ListTile(
                                               leading: Image.asset(
                                                   'assets/images/trash.png'),
-                                              title: Text('Delete Comment'),
+                                              title: const Text('Delete Comment'),
                                             )),
                                       ],
                                       icon: Image.asset(
@@ -1042,18 +1052,9 @@ class DetailProject extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                              ),
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: GlobalColors.dividerLine),
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(5),
-                                    bottom: Radius.circular(5)),
-                              ),
-                              width: 800),
+                              )),
 
-                          SizedBox(
+                        const  SizedBox(
                             height: 15,
                           ),
                           Row(
@@ -1065,7 +1066,7 @@ class DetailProject extends StatelessWidget {
                                 circleZize: 44,
                                 height: 30,
                               ),
-                              SizedBox(
+                             const SizedBox(
                                 width: 10,
                               ),
                               Flexible(
@@ -1089,7 +1090,7 @@ class DetailProject extends StatelessWidget {
                                                 vertical: 15, horizontal: 14),
                                         hintText: 'Leave comment...',
                                         hintMaxLines: 5,
-                                        helperStyle: TextStyle(
+                                        helperStyle:const TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w400,
                                         ),
@@ -1109,7 +1110,7 @@ class DetailProject extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                        const  SizedBox(
                             height: 20,
                           ),
                           Row(
@@ -1139,7 +1140,7 @@ class DetailProject extends StatelessWidget {
                                                 fontWeight: FontWeight.w600),
                                           ),
                                         ),
-                                        SizedBox(
+                                     const   SizedBox(
                                           width: 1,
                                         ),
                                         Image.asset('assets/images/send-2.png')
@@ -1150,13 +1151,20 @@ class DetailProject extends StatelessWidget {
                           ),
                         ],
                       )),
-                  SizedBox(
+                const  SizedBox(
                     width: 30,
                   ),
                   Expanded(
                       child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: GlobalColors.dividerLine),
+                      shape: BoxShape.rectangle,
+                      borderRadius:const BorderRadius.vertical(
+                          top: Radius.circular(5), bottom: Radius.circular(5)),
+                    ),
+                    width: 372,
                     child: Padding(
-                      padding: EdgeInsets.only(
+                      padding:const EdgeInsets.only(
                           left: 5, right: 5, top: 15, bottom: 15),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1164,7 +1172,7 @@ class DetailProject extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                             const Text(
                                 'Project Milestones',
                                 style: TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.w500),
@@ -1178,7 +1186,7 @@ class DetailProject extends StatelessWidget {
                                             builder: (builder) =>
                                                 const CreateNewMilestone());
                                       },
-                                      child: ListTile(
+                                      child:const ListTile(
                                         leading: Icon(Icons.add),
                                         title: Text('Add Milestone'),
                                       )),
@@ -1188,8 +1196,8 @@ class DetailProject extends StatelessWidget {
                               )
                             ],
                           ),
-                          Divider(),
-                          SizedBox(
+                       const   Divider(),
+                         const SizedBox(
                             height: 10,
                           ),
                           // Center(
@@ -1215,7 +1223,7 @@ class DetailProject extends StatelessWidget {
                             height: 550,
                             child: ListView.builder(
                                 scrollDirection: Axis.vertical,
-                                physics: AlwaysScrollableScrollPhysics(
+                                physics:const AlwaysScrollableScrollPhysics(
                                     parent: AlwaysScrollableScrollPhysics()),
                                 shrinkWrap: true,
                                 padding: EdgeInsets.zero,
@@ -1255,7 +1263,7 @@ class DetailProject extends StatelessWidget {
                                                 '${dummydata[index]}',
                                                 softWrap: true,
                                                 overflow: TextOverflow.ellipsis,
-                                                style: TextStyle(
+                                                style:const TextStyle(
                                                     fontSize: 14,
                                                     overflow:
                                                         TextOverflow.ellipsis,
@@ -1277,28 +1285,30 @@ class DetailProject extends StatelessWidget {
                                                     leading: Image.asset(
                                                         'assets/images/edit-2.png'),
                                                     title:
-                                                        Text('Edit Milestone'),
+                                                       const Text('Edit Milestone'),
                                                   )),
                                               PopupMenuItem(
                                                   onTap: () {
                                                     showDialog(
                                                         context: context,
                                                         builder: (builder) =>
-                                                            DeleteMilestone());
+                                                         const   DeleteMilestone());
                                                   },
                                                   child: ListTile(
                                                     leading: Image.asset(
                                                         'assets/images/trash.png'),
-                                                    title: Text(
+                                                    title:const Text(
                                                         'Delete Milestone'),
                                                   )),
                                               PopupMenuItem(
-                                                  onTap: () {},
+                                                  onTap: () {
+                                                    showDialog(context: context,builder: (builder) =>const ChangeStatusDialog() ,);
+                                                  },
                                                   child: ListTile(
                                                     leading: Image.asset(
                                                         'assets/images/status.png'),
                                                     title:
-                                                        Text('Change status'),
+                                                       const Text('Change status'),
                                                   )),
                                             ],
                                             icon: Image.asset(
@@ -1308,13 +1318,13 @@ class DetailProject extends StatelessWidget {
                                       ),
                                       Row(
                                         children: [
-                                          Text(
+                                          const Text(
                                             'Status',
                                             style: TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w400),
                                           ),
-                                          SizedBox(
+                                         const SizedBox(
                                             width: 4,
                                           ),
                                           Text(
@@ -1334,13 +1344,6 @@ class DetailProject extends StatelessWidget {
                         ],
                       ),
                     ),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: GlobalColors.dividerLine),
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(5), bottom: Radius.circular(5)),
-                    ),
-                    width: 372,
                   ))
                 ],
               ),
