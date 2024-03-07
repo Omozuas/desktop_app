@@ -16,7 +16,7 @@ class CreateNewMilestone extends StatefulWidget {
 
 class _CreateNewMilestoneState extends State<CreateNewMilestone> {
   StatusState? statusState = StatusState.pending;
-  bool createMore = true;
+  bool createMore = false;
   @override
   Widget build(BuildContext context) {
     return AlertDialogWidget(
@@ -149,7 +149,7 @@ class _CreateNewMilestoneState extends State<CreateNewMilestone> {
                                     },
                                   ),
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 SizedBox(
                                   height: 20,
                                   child: RadioListTile<StatusState>(

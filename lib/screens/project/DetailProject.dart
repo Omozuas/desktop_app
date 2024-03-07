@@ -1271,7 +1271,7 @@ class DetailProject extends StatelessWidget {
                                                     showDialog(
                                                         context: context,
                                                         builder: (builder) =>
-                                                            const DeleteMilestone());
+                                                            const EditMilestone());
                                                   },
                                                   child: ListTile(
                                                     leading: Image.asset(
