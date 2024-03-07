@@ -39,7 +39,7 @@ class _ChangeStatusDialogState extends State<ChangeStatusDialog> {
                             width: 172,
                             height: 40,
                             child: Text(
-                              'Delete Project',
+                              'Change Status',
                               style: TextStyle(
                                   color: GlobalColors.foundationblack500,
                                   fontWeight: FontWeight.w500,
