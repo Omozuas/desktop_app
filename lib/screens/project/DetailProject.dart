@@ -1280,7 +1280,12 @@ class DetailProject extends StatelessWidget {
                                                         Text('Edit Milestone'),
                                                   )),
                                               PopupMenuItem(
-                                                  onTap: () {},
+                                                  onTap: () {
+                                                    showDialog(
+                                                        context: context,
+                                                        builder: (builder) =>
+                                                            DeleteMilestone());
+                                                  },
                                                   child: ListTile(
                                                     leading: Image.asset(
                                                         'assets/images/trash.png'),

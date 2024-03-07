@@ -1,7 +1,6 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/screens/project/create_project_button.dart';
 import 'package:codegraniteflutter/screens/project/alert_dialog_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -28,7 +27,7 @@ class DeleteProjectDialog extends StatelessWidget {
                       width: 228,
                       height: 40,
                       child: Text(
-                        'Create New Project',
+                        'Delete Project',
                         style: TextStyle(
                             color: GlobalColors.foundationblack500,
                             fontWeight: FontWeight.w500,
