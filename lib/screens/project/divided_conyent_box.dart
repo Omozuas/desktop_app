@@ -1,10 +1,10 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:flutter/material.dart';
 
-class DividedBox extends StatelessWidget {
+class DividedContentBox extends StatelessWidget {
   final String t1, h1;
   final Widget? widget;
-  const DividedBox(
+  const DividedContentBox(
       {super.key, required this.t1, required this.widget, required this.h1});
 
   @override

@@ -2,9 +2,12 @@ import 'dart:io';
 
 import 'package:codegraniteflutter/Local_storage/get_directory.dart';
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
-import 'package:codegraniteflutter/screens/project/add_project_dialog.dart';
+import 'package:codegraniteflutter/screens/project/create_new_milestone.dart';
+import 'package:codegraniteflutter/screens/project/create_project_dialog.dart';
+import 'package:codegraniteflutter/screens/project/delete_milestone.dart';
 import 'package:codegraniteflutter/screens/project/delete_project_dialog.dart';
-import 'package:codegraniteflutter/screens/project/eddit_project_dialog.dart';
+import 'package:codegraniteflutter/screens/project/edit_project_dialog.dart';
+import 'package:codegraniteflutter/screens/project/edit_milestone.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/projectcontroller.dart';
 import 'package:codegraniteflutter/widgets/buttons/rowWithDownlodAndShareButton.dart';
 import 'package:codegraniteflutter/widgets/buttons/smallButton.dart';
@@ -134,20 +137,7 @@ class DetailProject extends StatelessWidget {
                                                   showDialog(
                                                       context: context,
                                                       builder: (builder) =>
-                                                          AlertDialog(
-                                                              backgroundColor:
-                                                                  GlobalColors
-                                                                      .whiteText,
-                                                              shadowColor:
-                                                                  GlobalColors
-                                                                      .whiteText,
-                                                              surfaceTintColor:
-                                                                  GlobalColors
-                                                                      .whiteText,
-                                                              contentPadding:
-                                                                  null,
-                                                              content:
-                                                                  const EditProjectDialog()));
+                                                          const EditProjectDialog());
                                                   print('Button tapped');
                                                 },
                                                 child: ListTile(
@@ -160,19 +150,7 @@ class DetailProject extends StatelessWidget {
                                                   showDialog(
                                                       context: context,
                                                       builder: (builder) =>
-                                                          AlertDialog(backgroundColor:
-                                                                  GlobalColors
-                                                                      .whiteText,
-                                                              shadowColor:
-                                                                  GlobalColors
-                                                                      .whiteText,
-                                                              surfaceTintColor:
-                                                                  GlobalColors
-                                                                      .whiteText,
-                                                              contentPadding:
-                                                                  null,
-                                                              content:
-                                                                  const DeleteProjectDialog()));
+                                                          const DeleteProjectDialog());
                                                 },
                                                 child: ListTile(
                                                   leading: Image.asset(
@@ -1194,7 +1172,12 @@ class DetailProject extends StatelessWidget {
                               Popupf(
                                 munelist: [
                                   PopupMenuItem(
-                                      onTap: () {},
+                                      onTap: () {
+                                        showDialog(
+                                            context: context,
+                                            builder: (builder) =>
+                                                const CreateNewMilestone());
+                                      },
                                       child: ListTile(
                                         leading: Icon(Icons.add),
                                         title: Text('Add Milestone'),
@@ -1284,7 +1267,12 @@ class DetailProject extends StatelessWidget {
                                           Popupf(
                                             munelist: [
                                               PopupMenuItem(
-                                                  onTap: () {},
+                                                  onTap: () {
+                                                    showDialog(
+                                                        context: context,
+                                                        builder: (builder) =>
+                                                            const DeleteMilestone());
+                                                  },
                                                   child: ListTile(
                                                     leading: Image.asset(
                                                         'assets/images/edit-2.png'),

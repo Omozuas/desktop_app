@@ -24,4 +24,5 @@ class GlobalColors {
   static HexColor butterColoryellow = HexColor('#F3DE8A');
   static HexColor lightWine = HexColor('#B493A3');
   static HexColor greyBackground = HexColor('#F8F4F6');
+  static HexColor completeYellow = HexColor('#EEA300');
 }

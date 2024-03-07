@@ -1,13 +1,13 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:flutter/material.dart';
 
-class Box extends StatelessWidget {
+class ContentBox1 extends StatelessWidget {
   final double h1, h3;
 
   final String? t1, t2;
   final Color? color;
   final Widget? widget;
-  const Box(
+  const ContentBox1(
       {super.key,
       required this.h1,
       this.t1,
