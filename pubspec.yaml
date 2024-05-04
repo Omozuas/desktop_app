@@ -47,13 +47,13 @@ dependencies:
   path: ^1.8.3
   url_launcher: ^6.2.2
   video_player: ^2.8.1
-  number_pagination: ^0.0.3+2
+  number_pagination: ^1.0.6
   number_paginator: ^0.4.0
   font_awesome_flutter: ^10.6.0
   path_provider: ^2.1.1
   chewie: ^1.7.4
   csc_picker: ^0.2.7
-  file_picker: ^6.1.1
+  file_picker: ^8.0.3
   image_picker: ^1.0.7
   popover: ^0.3.0
   emoji_picker_flutter: ^2.0.0
