@@ -29,7 +29,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    decodeToken();
+    // decodeToken();
   }
 
   Future<void> decodeToken() async {
@@ -195,8 +195,9 @@ class _NavigationMenueState extends State<NavigationMenue> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                     color: GlobalColors.whiteText,
-                                    borderRadius: const BorderRadiusDirectional.all(
-                                        Radius.circular(5))),
+                                    borderRadius:
+                                        const BorderRadiusDirectional.all(
+                                            Radius.circular(5))),
                                 child: Center(
                                   child: ListTile(
                                     onTap: () async {

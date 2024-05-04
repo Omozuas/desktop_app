@@ -179,8 +179,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 text:
                                     loginAuth.loading ? 'loading....' : 'Login',
                                 onPressed: () {
-                                  // Get.to(NavigationMenue());
-                                  loginUsers();
+                                  Get.to(NavigationMenue());
+                                  // loginUsers();
                                 },
                               ),
                               SizedBox(

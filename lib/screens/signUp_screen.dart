@@ -1,4 +1,5 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
+import 'package:codegraniteflutter/firstNav_Menu.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
 import 'package:codegraniteflutter/services/Apis/AuthApi/registerApi.dart';
 // import 'package:codegraniteflutter/seodNav.dart';
@@ -238,8 +239,8 @@ class _SignupScreenState extends State<SignupScreen> {
                                     : 'Sign Up',
                                 onPressed: () {
                                   // print("done");
-                                  _createUser();
-                                  // Get.to(NavigationMenue());
+                                  // _createUser();
+                                  Get.to(NavigationMenue());
                                 },
                               ),
                               SizedBox(

@@ -37,7 +37,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    decodeToken();
+    // decodeToken();
   }
 
   Future<void> decodeToken() async {
