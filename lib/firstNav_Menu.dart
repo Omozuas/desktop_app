@@ -1,9 +1,11 @@
 import 'package:codegraniteflutter/colorsConstrain/colorsHex.dart';
 import 'package:codegraniteflutter/screens/Login_Screen.dart';
 import 'package:codegraniteflutter/screens/inviteScreen/invite_dialog.dart';
+import 'package:codegraniteflutter/services/Apis/AuthApi/registerApi.dart';
 import 'package:codegraniteflutter/services/Apis/GetInfoFromApi/getUserById.dart';
 import 'package:codegraniteflutter/widgets/NavTabMenue/NavController.dart';
 import 'package:codegraniteflutter/widgets/navProfileMenue_widget/navProfileMenue_widget.dart';
+import 'package:codegraniteflutter/widgets/snack_bars/snack_bar_messages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -56,6 +58,17 @@ class _NavigationMenueState extends State<NavigationMenue> {
         fullname = value.fullName;
         email = value.email;
       });
+    });
+  }
+
+  Future<void> logout(id, token) async {
+    final getInfo = Provider.of<RegisterApiProvider>(context, listen: false);
+    getInfo.logout(id, token).then((value) {
+      if (value.status == "success") {
+        success(context: context, message: value.message);
+      } else {
+        error(context: context, message: value.message);
+      }
     });
   }
 
@@ -201,6 +214,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
                                 child: Center(
                                   child: ListTile(
                                     onTap: () async {
+                                      logout(id, token);
                                       SharedPreferences prefs =
                                           await SharedPreferences.getInstance();
                                       await prefs.clear();
