@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:codegraniteflutter/services/models/AuthModelRespons/loginRespons.dart';
+import 'package:codegraniteflutter/services/models/AuthModelRespons/logoutRespons.dart';
 import 'package:codegraniteflutter/services/models/AuthModelRespons/signUpRespons.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -80,5 +81,30 @@ class RegisterApiProvider with ChangeNotifier {
     }
 
     return loginresopnsMole(res.body);
+  }
+
+  Future<LogoutresopnsMole> logout(String id, token) async {
+    setLoading(true);
+    var registration = "${AppUrl.baseUrl}auth/logout";
+    var res = await http.post(Uri.parse(registration),
+        headers: {
+          'Content-Type': "application/json",
+          "Authorization": "Bearer $token",
+        },
+        body: jsonEncode({
+          "accountId": id,
+        }));
+
+    if (res.statusCode == 200) {
+      setLoading(false);
+    } else if (res.statusCode == 400) {
+      setLoading(false);
+    } else if (res.statusCode == 404) {
+      setLoading(false);
+    } else if (res.statusCode == 500) {
+      setLoading(false);
+    }
+
+    return logoutresopnsMole(res.body);
   }
 }
