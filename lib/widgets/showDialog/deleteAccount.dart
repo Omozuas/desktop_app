@@ -3,16 +3,11 @@ import 'package:codegraniteflutter/widgets/buttons/LargButton_widget.dart';
 import 'package:codegraniteflutter/widgets/buttons/transparentButton.dart';
 import 'package:flutter/material.dart';
 
-class DeleteAccountBox extends StatefulWidget {
+class DeleteAccountBox extends StatelessWidget {
   DeleteAccountBox({
     super.key,
   });
 
-  @override
-  State<DeleteAccountBox> createState() => _DeleteAccountBoxState();
-}
-
-class _DeleteAccountBoxState extends State<DeleteAccountBox> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
 
   @override

@@ -6,9 +6,11 @@ import 'package:codegraniteflutter/services/Apis/AuthApi/registerApi.dart';
 import 'package:codegraniteflutter/widgets/buttons/LargButton_widget.dart';
 import 'package:codegraniteflutter/widgets/containers/containrs_widegt.dart';
 import 'package:codegraniteflutter/widgets/loginAndSignUP_widget/textFieldWithLabel_widget.dart';
+import 'package:codegraniteflutter/widgets/showDialog/acceptTermsAndConduction.dart';
 import 'package:codegraniteflutter/widgets/snack_bars/snack_bar_messages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -33,12 +35,14 @@ class _SignupScreenState extends State<SignupScreen> {
   final formKey4 = GlobalKey<FormState>();
   bool _isVisible = false;
   bool _isVisible1 = false;
-  void _createUser() async {
+  late bool isAccepted;
+  void _createUser(bool isAccepted) async {
     if (formKey.currentState!.validate() &&
         formKey1.currentState!.validate() &&
         formKey2.currentState!.validate() &&
         formKey3.currentState!.validate() &&
         formKey4.currentState!.validate()) {
+      // if (isAccepted = true) {
       final registerAuth =
           Provider.of<RegisterApiProvider>(context, listen: false);
       registerAuth
@@ -55,7 +59,17 @@ class _SignupScreenState extends State<SignupScreen> {
           error(context: context, message: value.message);
         }
       });
+      // } else {
+      //   print(isAccepted = false);
+      // }
     }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print(isAccepted = false);
   }
 
   @override
@@ -239,9 +253,39 @@ class _SignupScreenState extends State<SignupScreen> {
                                     : 'Sign Up',
                                 onPressed: () {
                                   // print("done");
-                                  // _createUser();
-                                  Get.to(NavigationMenue());
+                                  _createUser(isAccepted);
+                                  // Get.to(NavigationMenue());
                                 },
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Flexible(
+                                    child: Text("Already have an account?",
+                                        softWrap: true,
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400,
+                                        )),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.to(() => LoginScreen());
+                                    },
+                                    child: Text("Login",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          color: GlobalColors.buttonBlue,
+                                          fontWeight: FontWeight.w500,
+                                        )),
+                                  ),
+                                ],
                               ),
                               SizedBox(
                                 height: 30,
@@ -303,30 +347,36 @@ class _SignupScreenState extends State<SignupScreen> {
                                 height: 30,
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Flexible(
-                                    child: Text("Already have an account?",
+                                    child: Text("accept terms and condition",
                                         softWrap: true,
                                         style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w400,
                                         )),
                                   ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  GestureDetector(
+                                  InkWell(
                                     onTap: () {
-                                      Get.to(() => LoginScreen());
+                                      showDialog(
+                                          context: context,
+                                          builder: (context) =>
+                                              AcceptTermsAndConditionPage(
+                                                onTap: () {
+                                                  setState(() {
+                                                    isAccepted == true;
+                                                    print(isAccepted == true);
+                                                  });
+                                                },
+                                              ));
                                     },
-                                    child: Text("Login",
+                                    child: Text("Read",
+                                        softWrap: true,
                                         style: TextStyle(
-                                          fontSize: 18,
-                                          color: GlobalColors.buttonBlue,
-                                          fontWeight: FontWeight.w500,
-                                        )),
-                                  ),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400,
+                                            color: Colors.blue)),
+                                  )
                                 ],
                               )
                             ],

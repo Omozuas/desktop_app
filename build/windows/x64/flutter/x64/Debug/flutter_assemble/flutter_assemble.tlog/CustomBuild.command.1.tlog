@@ -1,0 +1,28 @@
+^C:\FLUTTER\CODEGRANITEFLUTTER\BUILD\WINDOWS\X64\CMAKEFILES\BDE4A736B523E169557C23551B607FA4\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter PROJECT_DIR=C:\flutter\codegraniteflutter FLUTTER_ROOT=C:\src\flutter FLUTTER_EPHEMERAL_DIR=C:\flutter\codegraniteflutter\windows\flutter\ephemeral PROJECT_DIR=C:\flutter\codegraniteflutter FLUTTER_TARGET=C:\flutter\codegraniteflutter\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC8yZTRiYTljNmZiNDk5Y2NkNGU4MTQyMDU0Mzc4M2NjNzI2N2FlNDA2Lw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\flutter\codegraniteflutter\.dart_tool\package_config.json C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\FLUTTER\CODEGRANITEFLUTTER\BUILD\WINDOWS\X64\CMAKEFILES\73D309595C1FB9CB41785C1ACB522462\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\FLUTTER\CODEGRANITEFLUTTER\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/flutter/codegraniteflutter/windows -BC:/flutter/codegraniteflutter/build/windows/x64 --check-stamp-file C:/flutter/codegraniteflutter/build/windows/x64/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

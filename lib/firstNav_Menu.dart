@@ -29,7 +29,7 @@ class _NavigationMenueState extends State<NavigationMenue> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // decodeToken();
+    decodeToken();
   }
 
   Future<void> decodeToken() async {
